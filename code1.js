@@ -71,6 +71,18 @@ gdjs.Title_32ScreenCode.GDGreenObjects1= [];
 gdjs.Title_32ScreenCode.GDGreenObjects2= [];
 gdjs.Title_32ScreenCode.GDGreenObjects3= [];
 gdjs.Title_32ScreenCode.GDGreenObjects4= [];
+gdjs.Title_32ScreenCode.GDBasketballSkinObjects1= [];
+gdjs.Title_32ScreenCode.GDBasketballSkinObjects2= [];
+gdjs.Title_32ScreenCode.GDBasketballSkinObjects3= [];
+gdjs.Title_32ScreenCode.GDBasketballSkinObjects4= [];
+gdjs.Title_32ScreenCode.GDSolarSkinObjects1= [];
+gdjs.Title_32ScreenCode.GDSolarSkinObjects2= [];
+gdjs.Title_32ScreenCode.GDSolarSkinObjects3= [];
+gdjs.Title_32ScreenCode.GDSolarSkinObjects4= [];
+gdjs.Title_32ScreenCode.GDTextBasketballObjects1= [];
+gdjs.Title_32ScreenCode.GDTextBasketballObjects2= [];
+gdjs.Title_32ScreenCode.GDTextBasketballObjects3= [];
+gdjs.Title_32ScreenCode.GDTextBasketballObjects4= [];
 
 gdjs.Title_32ScreenCode.conditionTrue_0 = {val:false};
 gdjs.Title_32ScreenCode.condition0IsTrue_0 = {val:false};
@@ -182,7 +194,7 @@ for(var i = 0, k = 0, l = gdjs.Title_32ScreenCode.GDTitleObjects1.length;i<l;++i
 gdjs.Title_32ScreenCode.GDTitleObjects1.length = k;}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
 {
 {gdjs.Title_32ScreenCode.conditionTrue_1 = gdjs.Title_32ScreenCode.condition1IsTrue_0;
-gdjs.Title_32ScreenCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(11976660);
+gdjs.Title_32ScreenCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8082740);
 }
 }}
 if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
@@ -577,7 +589,166 @@ gdjs.copyArray(runtimeScene.getObjects("LivesGamemode"), gdjs.Title_32ScreenCode
 }
 
 
-};gdjs.Title_32ScreenCode.eventsList4 = function(runtimeScene) {
+};gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDBasketballSkinObjects2Objects = Hashtable.newFrom({"BasketballSkin": gdjs.Title_32ScreenCode.GDBasketballSkinObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDBasketballSkinObjects2Objects = Hashtable.newFrom({"BasketballSkin": gdjs.Title_32ScreenCode.GDBasketballSkinObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDBasketballSkinObjects2Objects = Hashtable.newFrom({"BasketballSkin": gdjs.Title_32ScreenCode.GDBasketballSkinObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects = Hashtable.newFrom({"SolarSkin": gdjs.Title_32ScreenCode.GDSolarSkinObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects = Hashtable.newFrom({"SolarSkin": gdjs.Title_32ScreenCode.GDSolarSkinObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects = Hashtable.newFrom({"SolarSkin": gdjs.Title_32ScreenCode.GDSolarSkinObjects2});
+gdjs.Title_32ScreenCode.eventsList4 = function(runtimeScene) {
+
+{
+
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+{runtimeScene.getGame().getVariables().get("BallSkin").setString("Default");
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("BasketballSkin"), gdjs.Title_32ScreenCode.GDBasketballSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDBasketballSkinObjects2Objects, runtimeScene, true, false);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDBasketballSkinObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDBasketballSkinObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDBasketballSkinObjects2[i].setColor("63;63;63");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("BasketballSkin"), gdjs.Title_32ScreenCode.GDBasketballSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDBasketballSkinObjects2Objects, runtimeScene, true, true);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDBasketballSkinObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDBasketballSkinObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDBasketballSkinObjects2[i].setColor("255;255;255");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("BasketballSkin"), gdjs.Title_32ScreenCode.GDBasketballSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDBasketballSkinObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+{runtimeScene.getGame().getVariables().get("BallSkin").setString("Default");
+}}
+
+}
+
+
+{
+
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("BallSkin")) == "Default";
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("BasketballSkin"), gdjs.Title_32ScreenCode.GDBasketballSkinObjects2);
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDBasketballSkinObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDBasketballSkinObjects2[i].setColor("39;39;39");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SolarSkin"), gdjs.Title_32ScreenCode.GDSolarSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects, runtimeScene, true, false);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDSolarSkinObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDSolarSkinObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDSolarSkinObjects2[i].setColor("63;63;63");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SolarSkin"), gdjs.Title_32ScreenCode.GDSolarSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects, runtimeScene, true, true);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDSolarSkinObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDSolarSkinObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDSolarSkinObjects2[i].setColor("255;255;255");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SolarSkin"), gdjs.Title_32ScreenCode.GDSolarSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+{runtimeScene.getGame().getVariables().get("BallSkin").setString("Solar");
+}}
+
+}
+
+
+{
+
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("BallSkin")) == "Solar";
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("SolarSkin"), gdjs.Title_32ScreenCode.GDSolarSkinObjects1);
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDSolarSkinObjects1.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDSolarSkinObjects1[i].setColor("39;39;39");
+}
+}}
+
+}
+
+
+};gdjs.Title_32ScreenCode.eventsList5 = function(runtimeScene) {
 
 {
 
@@ -597,6 +768,13 @@ gdjs.Title_32ScreenCode.eventsList2(runtimeScene);
 
 
 gdjs.Title_32ScreenCode.eventsList3(runtimeScene);
+}
+
+
+{
+
+
+gdjs.Title_32ScreenCode.eventsList4(runtimeScene);
 }
 
 
@@ -677,8 +855,20 @@ gdjs.Title_32ScreenCode.GDGreenObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDGreenObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDGreenObjects3.length = 0;
 gdjs.Title_32ScreenCode.GDGreenObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDBasketballSkinObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDBasketballSkinObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDBasketballSkinObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDBasketballSkinObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDSolarSkinObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDSolarSkinObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDSolarSkinObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDSolarSkinObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDTextBasketballObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDTextBasketballObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDTextBasketballObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDTextBasketballObjects4.length = 0;
 
-gdjs.Title_32ScreenCode.eventsList4(runtimeScene);
+gdjs.Title_32ScreenCode.eventsList5(runtimeScene);
 
 return;
 
