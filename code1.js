@@ -35,6 +35,10 @@ gdjs.Title_32ScreenCode.GDLivesGamemodeObjects1= [];
 gdjs.Title_32ScreenCode.GDLivesGamemodeObjects2= [];
 gdjs.Title_32ScreenCode.GDLivesGamemodeObjects3= [];
 gdjs.Title_32ScreenCode.GDLivesGamemodeObjects4= [];
+gdjs.Title_32ScreenCode.GDComboGamemodeObjects1= [];
+gdjs.Title_32ScreenCode.GDComboGamemodeObjects2= [];
+gdjs.Title_32ScreenCode.GDComboGamemodeObjects3= [];
+gdjs.Title_32ScreenCode.GDComboGamemodeObjects4= [];
 gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects1= [];
 gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects2= [];
 gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects3= [];
@@ -79,10 +83,18 @@ gdjs.Title_32ScreenCode.GDSolarSkinObjects1= [];
 gdjs.Title_32ScreenCode.GDSolarSkinObjects2= [];
 gdjs.Title_32ScreenCode.GDSolarSkinObjects3= [];
 gdjs.Title_32ScreenCode.GDSolarSkinObjects4= [];
+gdjs.Title_32ScreenCode.GDEarthSkinObjects1= [];
+gdjs.Title_32ScreenCode.GDEarthSkinObjects2= [];
+gdjs.Title_32ScreenCode.GDEarthSkinObjects3= [];
+gdjs.Title_32ScreenCode.GDEarthSkinObjects4= [];
 gdjs.Title_32ScreenCode.GDTextBasketballObjects1= [];
 gdjs.Title_32ScreenCode.GDTextBasketballObjects2= [];
 gdjs.Title_32ScreenCode.GDTextBasketballObjects3= [];
 gdjs.Title_32ScreenCode.GDTextBasketballObjects4= [];
+gdjs.Title_32ScreenCode.GDScoringModeObjects1= [];
+gdjs.Title_32ScreenCode.GDScoringModeObjects2= [];
+gdjs.Title_32ScreenCode.GDScoringModeObjects3= [];
+gdjs.Title_32ScreenCode.GDScoringModeObjects4= [];
 
 gdjs.Title_32ScreenCode.conditionTrue_0 = {val:false};
 gdjs.Title_32ScreenCode.condition0IsTrue_0 = {val:false};
@@ -414,6 +426,9 @@ gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDClassicGamemodeOb
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDLivesGamemodeObjects2Objects = Hashtable.newFrom({"LivesGamemode": gdjs.Title_32ScreenCode.GDLivesGamemodeObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDLivesGamemodeObjects2Objects = Hashtable.newFrom({"LivesGamemode": gdjs.Title_32ScreenCode.GDLivesGamemodeObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDLivesGamemodeObjects2Objects = Hashtable.newFrom({"LivesGamemode": gdjs.Title_32ScreenCode.GDLivesGamemodeObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComboGamemodeObjects2Objects = Hashtable.newFrom({"ComboGamemode": gdjs.Title_32ScreenCode.GDComboGamemodeObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComboGamemodeObjects2Objects = Hashtable.newFrom({"ComboGamemode": gdjs.Title_32ScreenCode.GDComboGamemodeObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComboGamemodeObjects2Objects = Hashtable.newFrom({"ComboGamemode": gdjs.Title_32ScreenCode.GDComboGamemodeObjects2});
 gdjs.Title_32ScreenCode.eventsList3 = function(runtimeScene) {
 
 {
@@ -576,13 +591,93 @@ gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
 {
 gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("Gamemode")) == "Lives";
 }if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("GamemodeDescription"), gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects2);
+gdjs.copyArray(runtimeScene.getObjects("LivesGamemode"), gdjs.Title_32ScreenCode.GDLivesGamemodeObjects2);
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDLivesGamemodeObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDLivesGamemodeObjects2[i].setAnimationName("Select");
+}
+}{for(var i = 0, len = gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects2[i].setString("Every time you score, you gain one life and the opponents lose one life! First to reach 0 lives loses.");
+}
+}}
+
+}
+
+
+{
+
+
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("ComboGamemode"), gdjs.Title_32ScreenCode.GDComboGamemodeObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComboGamemodeObjects2Objects, runtimeScene, true, false);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDComboGamemodeObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDComboGamemodeObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDComboGamemodeObjects2[i].setAnimationName("Hover");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("ComboGamemode"), gdjs.Title_32ScreenCode.GDComboGamemodeObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComboGamemodeObjects2Objects, runtimeScene, true, true);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDComboGamemodeObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDComboGamemodeObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDComboGamemodeObjects2[i].setAnimationName("Idle");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("ComboGamemode"), gdjs.Title_32ScreenCode.GDComboGamemodeObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComboGamemodeObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+{runtimeScene.getGame().getVariables().get("Gamemode").setString("Combo");
+}}
+
+}
+
+
+{
+
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("Gamemode")) == "Combo";
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("ComboGamemode"), gdjs.Title_32ScreenCode.GDComboGamemodeObjects1);
 gdjs.copyArray(runtimeScene.getObjects("GamemodeDescription"), gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects1);
-gdjs.copyArray(runtimeScene.getObjects("LivesGamemode"), gdjs.Title_32ScreenCode.GDLivesGamemodeObjects1);
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDLivesGamemodeObjects1.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDLivesGamemodeObjects1[i].setAnimationName("Select");
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDComboGamemodeObjects1.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDComboGamemodeObjects1[i].setAnimationName("Select");
 }
 }{for(var i = 0, len = gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects1.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects1[i].setString("Every time you score, you gain one life and the opponents lose one life! First to reach 0 lives loses.");
+    gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects1[i].setString("Score 3 goals before your opponent scores 1 goal, to win!");
 }
 }}
 
@@ -595,6 +690,9 @@ gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDBasketballSkinObj
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects = Hashtable.newFrom({"SolarSkin": gdjs.Title_32ScreenCode.GDSolarSkinObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects = Hashtable.newFrom({"SolarSkin": gdjs.Title_32ScreenCode.GDSolarSkinObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2Objects = Hashtable.newFrom({"SolarSkin": gdjs.Title_32ScreenCode.GDSolarSkinObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects = Hashtable.newFrom({"EarthSkin": gdjs.Title_32ScreenCode.GDEarthSkinObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects = Hashtable.newFrom({"EarthSkin": gdjs.Title_32ScreenCode.GDEarthSkinObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects = Hashtable.newFrom({"EarthSkin": gdjs.Title_32ScreenCode.GDEarthSkinObjects2});
 gdjs.Title_32ScreenCode.eventsList4 = function(runtimeScene) {
 
 {
@@ -739,9 +837,78 @@ gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
 {
 gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("BallSkin")) == "Solar";
 }if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("SolarSkin"), gdjs.Title_32ScreenCode.GDSolarSkinObjects1);
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDSolarSkinObjects1.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDSolarSkinObjects1[i].setColor("39;39;39");
+gdjs.copyArray(runtimeScene.getObjects("SolarSkin"), gdjs.Title_32ScreenCode.GDSolarSkinObjects2);
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDSolarSkinObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDSolarSkinObjects2[i].setColor("39;39;39");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("EarthSkin"), gdjs.Title_32ScreenCode.GDEarthSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects, runtimeScene, true, false);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDEarthSkinObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDEarthSkinObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDEarthSkinObjects2[i].setColor("63;63;63");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("EarthSkin"), gdjs.Title_32ScreenCode.GDEarthSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects, runtimeScene, true, true);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDEarthSkinObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDEarthSkinObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDEarthSkinObjects2[i].setColor("255;255;255");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("EarthSkin"), gdjs.Title_32ScreenCode.GDEarthSkinObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+{runtimeScene.getGame().getVariables().get("BallSkin").setString("Earth");
+}}
+
+}
+
+
+{
+
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("BallSkin")) == "Earth";
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("EarthSkin"), gdjs.Title_32ScreenCode.GDEarthSkinObjects1);
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDEarthSkinObjects1.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDEarthSkinObjects1[i].setColor("39;39;39");
 }
 }}
 
@@ -819,6 +986,10 @@ gdjs.Title_32ScreenCode.GDLivesGamemodeObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDLivesGamemodeObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDLivesGamemodeObjects3.length = 0;
 gdjs.Title_32ScreenCode.GDLivesGamemodeObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDComboGamemodeObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDComboGamemodeObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDComboGamemodeObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDComboGamemodeObjects4.length = 0;
 gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDGamemodeDescriptionObjects3.length = 0;
@@ -863,10 +1034,18 @@ gdjs.Title_32ScreenCode.GDSolarSkinObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDSolarSkinObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDSolarSkinObjects3.length = 0;
 gdjs.Title_32ScreenCode.GDSolarSkinObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDEarthSkinObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDEarthSkinObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDEarthSkinObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDEarthSkinObjects4.length = 0;
 gdjs.Title_32ScreenCode.GDTextBasketballObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDTextBasketballObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDTextBasketballObjects3.length = 0;
 gdjs.Title_32ScreenCode.GDTextBasketballObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDScoringModeObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDScoringModeObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDScoringModeObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDScoringModeObjects4.length = 0;
 
 gdjs.Title_32ScreenCode.eventsList5(runtimeScene);
 
