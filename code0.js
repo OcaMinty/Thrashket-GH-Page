@@ -39,6 +39,10 @@ gdjs.PvCCode.GDNpcLightObjects1= [];
 gdjs.PvCCode.GDNpcLightObjects2= [];
 gdjs.PvCCode.GDNpcLightObjects3= [];
 gdjs.PvCCode.GDNpcLightObjects4= [];
+gdjs.PvCCode.GDTimerObjects1= [];
+gdjs.PvCCode.GDTimerObjects2= [];
+gdjs.PvCCode.GDTimerObjects3= [];
+gdjs.PvCCode.GDTimerObjects4= [];
 
 gdjs.PvCCode.conditionTrue_0 = {val:false};
 gdjs.PvCCode.condition0IsTrue_0 = {val:false};
@@ -1521,8 +1525,8 @@ gdjs.PvCCode.eventsList13(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects2Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects2});
+};gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
 gdjs.PvCCode.asyncCallback12056940 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
@@ -1541,8 +1545,8 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1)
 }
 
 
-};gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects2Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects2});
+};gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
 gdjs.PvCCode.asyncCallback8488532 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
@@ -1601,24 +1605,24 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), 
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects3);
 
 gdjs.PvCCode.condition0IsTrue_0.val = false;
 gdjs.PvCCode.condition1IsTrue_0.val = false;
 gdjs.PvCCode.condition2IsTrue_0.val = false;
 {
-gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects2Objects, false, runtimeScene, false);
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects, false, runtimeScene, false);
 }if ( gdjs.PvCCode.condition0IsTrue_0.val ) {
 {
-for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
-    if ( gdjs.PvCCode.GDBallObjects2[i].getVariableString(gdjs.PvCCode.GDBallObjects2[i].getVariables().get("BallHolder")) == "Player" ) {
+for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].getVariableString(gdjs.PvCCode.GDBallObjects3[i].getVariables().get("BallHolder")) == "Player" ) {
         gdjs.PvCCode.condition1IsTrue_0.val = true;
-        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
         ++k;
     }
 }
-gdjs.PvCCode.GDBallObjects2.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
+gdjs.PvCCode.GDBallObjects3.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition2IsTrue_0;
 gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9146740);
@@ -1639,24 +1643,24 @@ gdjs.PvCCode.eventsList15(runtimeScene);} //End of subevents
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects3);
 
 gdjs.PvCCode.condition0IsTrue_0.val = false;
 gdjs.PvCCode.condition1IsTrue_0.val = false;
 gdjs.PvCCode.condition2IsTrue_0.val = false;
 {
-gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects2Objects, false, runtimeScene, false);
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects, false, runtimeScene, false);
 }if ( gdjs.PvCCode.condition0IsTrue_0.val ) {
 {
-for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
-    if ( gdjs.PvCCode.GDBallObjects2[i].getVariableString(gdjs.PvCCode.GDBallObjects2[i].getVariables().get("BallHolder")) == "NPC" ) {
+for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].getVariableString(gdjs.PvCCode.GDBallObjects3[i].getVariables().get("BallHolder")) == "NPC" ) {
         gdjs.PvCCode.condition1IsTrue_0.val = true;
-        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
         ++k;
     }
 }
-gdjs.PvCCode.GDBallObjects2.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
+gdjs.PvCCode.GDBallObjects3.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition2IsTrue_0;
 gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8150836);
@@ -1680,22 +1684,22 @@ gdjs.PvCCode.eventsList16(runtimeScene);} //End of subevents
 
 gdjs.PvCCode.condition0IsTrue_0.val = false;
 {
-gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) >= 3;
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) >= 4;
 }if (gdjs.PvCCode.condition0IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
-gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects2);
-{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects2[i].hide(false);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects3[i].hide(false);
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects2[i].setString("Red Team Wins!");
+}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects3[i].setString("Red Team Wins!");
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects2[i].activateBehavior("PlatformerObject", false);
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].activateBehavior("PlatformerObject", false);
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerObjects2[i].activateBehavior("PlatformerObject", false);
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects3[i].activateBehavior("PlatformerObject", false);
 }
 }
 { //Subevents
@@ -1710,22 +1714,22 @@ gdjs.PvCCode.eventsList17(runtimeScene);} //End of subevents
 
 gdjs.PvCCode.condition0IsTrue_0.val = false;
 {
-gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")) >= 3;
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")) >= 4;
 }if (gdjs.PvCCode.condition0IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects1);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects1);
-gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects1);
-{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects1.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects1[i].hide(false);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
+gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects2);
+{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects2[i].hide(false);
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects1.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects1[i].setString("Green Team Wins!");
+}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects2[i].setString("Green Team Wins!");
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects1.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects1[i].activateBehavior("PlatformerObject", false);
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].activateBehavior("PlatformerObject", false);
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects1.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerObjects1[i].activateBehavior("PlatformerObject", false);
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects2[i].activateBehavior("PlatformerObject", false);
 }
 }
 { //Subevents
@@ -1735,7 +1739,179 @@ gdjs.PvCCode.eventsList18(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.PvCCode.eventsList20 = function(runtimeScene) {
+};gdjs.PvCCode.asyncCallback11632092 = function (runtimeScene, asyncObjectsList) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
+}}
+gdjs.PvCCode.eventsList20 = function(runtimeScene) {
+
+{
+
+
+{
+{
+const asyncObjectsList = new gdjs.LongLivedObjectsList();
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11632092(runtimeScene, asyncObjectsList)));
+}
+}
+
+}
+
+
+};gdjs.PvCCode.asyncCallback7727364 = function (runtimeScene, asyncObjectsList) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
+}}
+gdjs.PvCCode.eventsList21 = function(runtimeScene) {
+
+{
+
+
+{
+{
+const asyncObjectsList = new gdjs.LongLivedObjectsList();
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback7727364(runtimeScene, asyncObjectsList)));
+}
+}
+
+}
+
+
+};gdjs.PvCCode.eventsList22 = function(runtimeScene) {
+
+{
+
+
+gdjs.PvCCode.condition0IsTrue_0.val = false;
+{
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+}if (gdjs.PvCCode.condition0IsTrue_0.val) {
+{gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "Time");
+}}
+
+}
+
+
+{
+
+
+gdjs.PvCCode.condition0IsTrue_0.val = false;
+gdjs.PvCCode.condition1IsTrue_0.val = false;
+{
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "Time") >= 180;
+}if ( gdjs.PvCCode.condition0IsTrue_0.val ) {
+{
+{gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition1IsTrue_0;
+gdjs.PvCCode.conditionTrue_1.val = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) >= gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")));
+}
+}}
+if (gdjs.PvCCode.condition1IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects3[i].hide(false);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects3[i].setString("Red Team Wins!");
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].activateBehavior("PlatformerObject", false);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects3[i].activateBehavior("PlatformerObject", false);
+}
+}
+{ //Subevents
+gdjs.PvCCode.eventsList20(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+gdjs.PvCCode.condition0IsTrue_0.val = false;
+gdjs.PvCCode.condition1IsTrue_0.val = false;
+{
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "Time") >= 180;
+}if ( gdjs.PvCCode.condition0IsTrue_0.val ) {
+{
+{gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition1IsTrue_0;
+gdjs.PvCCode.conditionTrue_1.val = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")) >= gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")));
+}
+}}
+if (gdjs.PvCCode.condition1IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects3[i].hide(false);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects3[i].setString("Green Team Wins!");
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].activateBehavior("PlatformerObject", false);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects3[i].activateBehavior("PlatformerObject", false);
+}
+}
+{ //Subevents
+gdjs.PvCCode.eventsList21(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+gdjs.PvCCode.condition0IsTrue_0.val = false;
+{
+gdjs.PvCCode.condition0IsTrue_0.val = !(gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "Time") >= 120);
+}if (gdjs.PvCCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDTimerObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDTimerObjects3[i].setBBText(gdjs.evtsExt__TimeFormatter__SecondsToHHMMSS.func(runtimeScene, gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSeconds(runtimeScene, "Time"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+}
+}}
+
+}
+
+
+{
+
+
+gdjs.PvCCode.condition0IsTrue_0.val = false;
+{
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "Time") >= 120;
+}if (gdjs.PvCCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects2);
+{for(var i = 0, len = gdjs.PvCCode.GDTimerObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDTimerObjects2[i].setBBText("[outline=#E73C3C]" + gdjs.evtsExt__TimeFormatter__SecondsToHHMMSS.func(runtimeScene, gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSeconds(runtimeScene, "Time"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) + "[/outline]");
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.eventsList23 = function(runtimeScene) {
+
+{
+
+
+{
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects1);
+{for(var i = 0, len = gdjs.PvCCode.GDTimerObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDTimerObjects1[i].hide();
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.eventsList24 = function(runtimeScene) {
 
 {
 
@@ -1881,7 +2057,44 @@ gdjs.PvCCode.eventsList19(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.PvCCode.eventsList21 = function(runtimeScene) {
+{
+
+
+
+}
+
+
+{
+
+
+gdjs.PvCCode.condition0IsTrue_0.val = false;
+{
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"), true);
+}if (gdjs.PvCCode.condition0IsTrue_0.val) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList22(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+gdjs.PvCCode.condition0IsTrue_0.val = false;
+{
+gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"), false);
+}if (gdjs.PvCCode.condition0IsTrue_0.val) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList23(runtimeScene);} //End of subevents
+}
+
+}
+
+
+};gdjs.PvCCode.eventsList25 = function(runtimeScene) {
 
 {
 
@@ -1925,7 +2138,7 @@ gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects1);
 }
 
 
-};gdjs.PvCCode.eventsList22 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList26 = function(runtimeScene) {
 
 {
 
@@ -1944,14 +2157,14 @@ gdjs.PvCCode.eventsList4(runtimeScene);
 {
 
 
-gdjs.PvCCode.eventsList20(runtimeScene);
+gdjs.PvCCode.eventsList24(runtimeScene);
 }
 
 
 {
 
 
-gdjs.PvCCode.eventsList21(runtimeScene);
+gdjs.PvCCode.eventsList25(runtimeScene);
 }
 
 
@@ -2000,8 +2213,12 @@ gdjs.PvCCode.GDNpcLightObjects1.length = 0;
 gdjs.PvCCode.GDNpcLightObjects2.length = 0;
 gdjs.PvCCode.GDNpcLightObjects3.length = 0;
 gdjs.PvCCode.GDNpcLightObjects4.length = 0;
+gdjs.PvCCode.GDTimerObjects1.length = 0;
+gdjs.PvCCode.GDTimerObjects2.length = 0;
+gdjs.PvCCode.GDTimerObjects3.length = 0;
+gdjs.PvCCode.GDTimerObjects4.length = 0;
 
-gdjs.PvCCode.eventsList22(runtimeScene);
+gdjs.PvCCode.eventsList26(runtimeScene);
 
 return;
 
