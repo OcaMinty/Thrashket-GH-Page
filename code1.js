@@ -87,10 +87,6 @@ gdjs.Title_32ScreenCode.GDEarthSkinObjects1= [];
 gdjs.Title_32ScreenCode.GDEarthSkinObjects2= [];
 gdjs.Title_32ScreenCode.GDEarthSkinObjects3= [];
 gdjs.Title_32ScreenCode.GDEarthSkinObjects4= [];
-gdjs.Title_32ScreenCode.GDInvisSkinObjects1= [];
-gdjs.Title_32ScreenCode.GDInvisSkinObjects2= [];
-gdjs.Title_32ScreenCode.GDInvisSkinObjects3= [];
-gdjs.Title_32ScreenCode.GDInvisSkinObjects4= [];
 gdjs.Title_32ScreenCode.GDTextBasketballObjects1= [];
 gdjs.Title_32ScreenCode.GDTextBasketballObjects2= [];
 gdjs.Title_32ScreenCode.GDTextBasketballObjects3= [];
@@ -103,14 +99,14 @@ gdjs.Title_32ScreenCode.GDTimerToggleObjects1= [];
 gdjs.Title_32ScreenCode.GDTimerToggleObjects2= [];
 gdjs.Title_32ScreenCode.GDTimerToggleObjects3= [];
 gdjs.Title_32ScreenCode.GDTimerToggleObjects4= [];
-gdjs.Title_32ScreenCode.GDTimerObjects1= [];
-gdjs.Title_32ScreenCode.GDTimerObjects2= [];
-gdjs.Title_32ScreenCode.GDTimerObjects3= [];
-gdjs.Title_32ScreenCode.GDTimerObjects4= [];
-gdjs.Title_32ScreenCode.GDNewTextObjects1= [];
-gdjs.Title_32ScreenCode.GDNewTextObjects2= [];
-gdjs.Title_32ScreenCode.GDNewTextObjects3= [];
-gdjs.Title_32ScreenCode.GDNewTextObjects4= [];
+gdjs.Title_32ScreenCode.GDTimerTextObjects1= [];
+gdjs.Title_32ScreenCode.GDTimerTextObjects2= [];
+gdjs.Title_32ScreenCode.GDTimerTextObjects3= [];
+gdjs.Title_32ScreenCode.GDTimerTextObjects4= [];
+gdjs.Title_32ScreenCode.GDTimeDisclaimerObjects1= [];
+gdjs.Title_32ScreenCode.GDTimeDisclaimerObjects2= [];
+gdjs.Title_32ScreenCode.GDTimeDisclaimerObjects3= [];
+gdjs.Title_32ScreenCode.GDTimeDisclaimerObjects4= [];
 
 gdjs.Title_32ScreenCode.conditionTrue_0 = {val:false};
 gdjs.Title_32ScreenCode.condition0IsTrue_0 = {val:false};
@@ -222,7 +218,7 @@ for(var i = 0, k = 0, l = gdjs.Title_32ScreenCode.GDTitleObjects1.length;i<l;++i
 gdjs.Title_32ScreenCode.GDTitleObjects1.length = k;}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
 {
 {gdjs.Title_32ScreenCode.conditionTrue_1 = gdjs.Title_32ScreenCode.condition1IsTrue_0;
-gdjs.Title_32ScreenCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8082740);
+gdjs.Title_32ScreenCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9254604);
 }
 }}
 if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
@@ -709,9 +705,6 @@ gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDSolarSkinObjects2
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects = Hashtable.newFrom({"EarthSkin": gdjs.Title_32ScreenCode.GDEarthSkinObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects = Hashtable.newFrom({"EarthSkin": gdjs.Title_32ScreenCode.GDEarthSkinObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDEarthSkinObjects2Objects = Hashtable.newFrom({"EarthSkin": gdjs.Title_32ScreenCode.GDEarthSkinObjects2});
-gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDInvisSkinObjects2Objects = Hashtable.newFrom({"InvisSkin": gdjs.Title_32ScreenCode.GDInvisSkinObjects2});
-gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDInvisSkinObjects2Objects = Hashtable.newFrom({"InvisSkin": gdjs.Title_32ScreenCode.GDInvisSkinObjects2});
-gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDInvisSkinObjects2Objects = Hashtable.newFrom({"InvisSkin": gdjs.Title_32ScreenCode.GDInvisSkinObjects2});
 gdjs.Title_32ScreenCode.eventsList4 = function(runtimeScene) {
 
 {
@@ -925,78 +918,9 @@ gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
 {
 gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("BallSkin")) == "Earth";
 }if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("EarthSkin"), gdjs.Title_32ScreenCode.GDEarthSkinObjects2);
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDEarthSkinObjects2.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDEarthSkinObjects2[i].setColor("39;39;39");
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("InvisSkin"), gdjs.Title_32ScreenCode.GDInvisSkinObjects2);
-
-gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
-{
-gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDInvisSkinObjects2Objects, runtimeScene, true, false);
-}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
-/* Reuse gdjs.Title_32ScreenCode.GDInvisSkinObjects2 */
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDInvisSkinObjects2.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDInvisSkinObjects2[i].setColor("63;63;63");
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("InvisSkin"), gdjs.Title_32ScreenCode.GDInvisSkinObjects2);
-
-gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
-{
-gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDInvisSkinObjects2Objects, runtimeScene, true, true);
-}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
-/* Reuse gdjs.Title_32ScreenCode.GDInvisSkinObjects2 */
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDInvisSkinObjects2.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDInvisSkinObjects2[i].setColor("255;255;255");
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("InvisSkin"), gdjs.Title_32ScreenCode.GDInvisSkinObjects2);
-
-gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
-gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
-{
-gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDInvisSkinObjects2Objects, runtimeScene, true, false);
-}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
-{
-gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-}}
-if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
-{runtimeScene.getGame().getVariables().get("BallSkin").setString("Invis");
-}}
-
-}
-
-
-{
-
-
-gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
-{
-gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("BallSkin")) == "Invis";
-}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("InvisSkin"), gdjs.Title_32ScreenCode.GDInvisSkinObjects1);
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDInvisSkinObjects1.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDInvisSkinObjects1[i].setColor("39;39;39");
+gdjs.copyArray(runtimeScene.getObjects("EarthSkin"), gdjs.Title_32ScreenCode.GDEarthSkinObjects1);
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDEarthSkinObjects1.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDEarthSkinObjects1[i].setColor("39;39;39");
 }
 }}
 
@@ -1247,10 +1171,6 @@ gdjs.Title_32ScreenCode.GDEarthSkinObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDEarthSkinObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDEarthSkinObjects3.length = 0;
 gdjs.Title_32ScreenCode.GDEarthSkinObjects4.length = 0;
-gdjs.Title_32ScreenCode.GDInvisSkinObjects1.length = 0;
-gdjs.Title_32ScreenCode.GDInvisSkinObjects2.length = 0;
-gdjs.Title_32ScreenCode.GDInvisSkinObjects3.length = 0;
-gdjs.Title_32ScreenCode.GDInvisSkinObjects4.length = 0;
 gdjs.Title_32ScreenCode.GDTextBasketballObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDTextBasketballObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDTextBasketballObjects3.length = 0;
@@ -1263,14 +1183,14 @@ gdjs.Title_32ScreenCode.GDTimerToggleObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDTimerToggleObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDTimerToggleObjects3.length = 0;
 gdjs.Title_32ScreenCode.GDTimerToggleObjects4.length = 0;
-gdjs.Title_32ScreenCode.GDTimerObjects1.length = 0;
-gdjs.Title_32ScreenCode.GDTimerObjects2.length = 0;
-gdjs.Title_32ScreenCode.GDTimerObjects3.length = 0;
-gdjs.Title_32ScreenCode.GDTimerObjects4.length = 0;
-gdjs.Title_32ScreenCode.GDNewTextObjects1.length = 0;
-gdjs.Title_32ScreenCode.GDNewTextObjects2.length = 0;
-gdjs.Title_32ScreenCode.GDNewTextObjects3.length = 0;
-gdjs.Title_32ScreenCode.GDNewTextObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDTimerTextObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDTimerTextObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDTimerTextObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDTimerTextObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDTimeDisclaimerObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDTimeDisclaimerObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDTimeDisclaimerObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDTimeDisclaimerObjects4.length = 0;
 
 gdjs.Title_32ScreenCode.eventsList6(runtimeScene);
 

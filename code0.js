@@ -1087,7 +1087,7 @@ gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects2Objects = Hashtable.newFrom({
 gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
 gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback12554812 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback9191564 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
 gdjs.PvCCode.eventsList5 = function(runtimeScene) {
@@ -1098,7 +1098,7 @@ gdjs.PvCCode.eventsList5 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback12554812(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback9191564(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -1107,7 +1107,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1)
 
 };gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback12556220 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback9192980 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
 gdjs.PvCCode.eventsList6 = function(runtimeScene) {
@@ -1118,14 +1118,14 @@ gdjs.PvCCode.eventsList6 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback12556220(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback9192980(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback12558780 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback9194660 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
 }}
 gdjs.PvCCode.eventsList7 = function(runtimeScene) {
@@ -1136,14 +1136,14 @@ gdjs.PvCCode.eventsList7 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback12558780(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback9194660(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback12544124 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback9196204 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
 }}
 gdjs.PvCCode.eventsList8 = function(runtimeScene) {
@@ -1154,7 +1154,7 @@ gdjs.PvCCode.eventsList8 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback12544124(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback9196204(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -1185,7 +1185,7 @@ for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition2IsTrue_0;
-gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(12553956);
+gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9191236);
 }
 }}
 }
@@ -1222,7 +1222,7 @@ for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition2IsTrue_0;
-gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(12555620);
+gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9191988);
 }
 }}
 }
@@ -1299,7 +1299,7 @@ gdjs.PvCCode.eventsList8(runtimeScene);} //End of subevents
 
 };gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback12516964 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback9199300 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
 gdjs.PvCCode.eventsList10 = function(runtimeScene) {
@@ -1310,7 +1310,7 @@ gdjs.PvCCode.eventsList10 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback12516964(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback9199300(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -1319,7 +1319,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1)
 
 };gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback12538444 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback9200940 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
 gdjs.PvCCode.eventsList11 = function(runtimeScene) {
@@ -1330,14 +1330,14 @@ gdjs.PvCCode.eventsList11 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback12538444(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback9200940(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback12512908 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback9202580 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
 }}
 gdjs.PvCCode.eventsList12 = function(runtimeScene) {
@@ -1348,14 +1348,14 @@ gdjs.PvCCode.eventsList12 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback12512908(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback9202580(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback12494164 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback9204116 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
 }}
 gdjs.PvCCode.eventsList13 = function(runtimeScene) {
@@ -1366,7 +1366,7 @@ gdjs.PvCCode.eventsList13 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback12494164(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback9204116(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -1411,7 +1411,7 @@ for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition2IsTrue_0;
-gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(12540356);
+gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9198364);
 }
 }}
 }
@@ -1449,7 +1449,7 @@ for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition2IsTrue_0;
-gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(12510244);
+gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9200436);
 }
 }}
 }
@@ -1527,7 +1527,7 @@ gdjs.PvCCode.eventsList13(runtimeScene);} //End of subevents
 
 };gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback12056940 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback9206596 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
 gdjs.PvCCode.eventsList15 = function(runtimeScene) {
@@ -1538,7 +1538,7 @@ gdjs.PvCCode.eventsList15 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback12056940(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback9206596(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -1547,7 +1547,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1)
 
 };gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_46PvCCode_46GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback8488532 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback9208236 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
 gdjs.PvCCode.eventsList16 = function(runtimeScene) {
@@ -1558,14 +1558,14 @@ gdjs.PvCCode.eventsList16 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback8488532(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback9208236(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback11666940 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback9209876 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
 }}
 gdjs.PvCCode.eventsList17 = function(runtimeScene) {
@@ -1576,14 +1576,14 @@ gdjs.PvCCode.eventsList17 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11666940(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback9209876(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback11669876 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback9211420 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
 }}
 gdjs.PvCCode.eventsList18 = function(runtimeScene) {
@@ -1594,7 +1594,7 @@ gdjs.PvCCode.eventsList18 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11669876(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback9211420(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -1625,7 +1625,7 @@ for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition2IsTrue_0;
-gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9146740);
+gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9206044);
 }
 }}
 }
@@ -1663,7 +1663,7 @@ for(var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;}if ( gdjs.PvCCode.condition1IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition2IsTrue_0;
-gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8150836);
+gdjs.PvCCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9207692);
 }
 }}
 }
@@ -1739,7 +1739,7 @@ gdjs.PvCCode.eventsList18(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.PvCCode.asyncCallback11632092 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback8129156 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
 }}
 gdjs.PvCCode.eventsList20 = function(runtimeScene) {
@@ -1750,14 +1750,14 @@ gdjs.PvCCode.eventsList20 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11632092(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback8129156(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback7727364 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback8234500 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Title Screen", false);
 }}
 gdjs.PvCCode.eventsList21 = function(runtimeScene) {
@@ -1768,7 +1768,7 @@ gdjs.PvCCode.eventsList21 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback7727364(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback8234500(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -1793,6 +1793,19 @@ gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins
 {
 
 
+{
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects2);
+{for(var i = 0, len = gdjs.PvCCode.GDTimerObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDTimerObjects2[i].setString(gdjs.evtsExt__TimeFormatter__SecondsToHHMMSS.func(runtimeScene, gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSeconds(runtimeScene, "Time"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+}
+}}
+
+}
+
+
+{
+
+
 gdjs.PvCCode.condition0IsTrue_0.val = false;
 gdjs.PvCCode.condition1IsTrue_0.val = false;
 {
@@ -1800,24 +1813,24 @@ gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.getTimerElapsed
 }if ( gdjs.PvCCode.condition0IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition1IsTrue_0;
-gdjs.PvCCode.conditionTrue_1.val = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) >= gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")));
+gdjs.PvCCode.conditionTrue_1.val = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) > gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")));
 }
 }}
 if (gdjs.PvCCode.condition1IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
-gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects3);
-{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects3[i].hide(false);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
+gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects2);
+{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects2[i].hide(false);
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects3[i].setString("Red Team Wins!");
+}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects2[i].setString("Red Team Wins!");
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects3[i].activateBehavior("PlatformerObject", false);
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].activateBehavior("PlatformerObject", false);
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerObjects3[i].activateBehavior("PlatformerObject", false);
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects2[i].activateBehavior("PlatformerObject", false);
 }
 }
 { //Subevents
@@ -1837,24 +1850,24 @@ gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.getTimerElapsed
 }if ( gdjs.PvCCode.condition0IsTrue_0.val ) {
 {
 {gdjs.PvCCode.conditionTrue_1 = gdjs.PvCCode.condition1IsTrue_0;
-gdjs.PvCCode.conditionTrue_1.val = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")) >= gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")));
+gdjs.PvCCode.conditionTrue_1.val = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")) > gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")));
 }
 }}
 if (gdjs.PvCCode.condition1IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
-gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects3);
-{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects3[i].hide(false);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects1);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects1);
+gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects1);
+{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects1[i].hide(false);
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects3[i].setString("Green Team Wins!");
+}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects1[i].setString("Green Team Wins!");
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects3[i].activateBehavior("PlatformerObject", false);
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects1[i].activateBehavior("PlatformerObject", false);
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerObjects3[i].activateBehavior("PlatformerObject", false);
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects1[i].activateBehavior("PlatformerObject", false);
 }
 }
 { //Subevents
@@ -1864,54 +1877,7 @@ gdjs.PvCCode.eventsList21(runtimeScene);} //End of subevents
 }
 
 
-{
-
-
-gdjs.PvCCode.condition0IsTrue_0.val = false;
-{
-gdjs.PvCCode.condition0IsTrue_0.val = !(gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "Time") >= 120);
-}if (gdjs.PvCCode.condition0IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects3);
-{for(var i = 0, len = gdjs.PvCCode.GDTimerObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDTimerObjects3[i].setBBText(gdjs.evtsExt__TimeFormatter__SecondsToHHMMSS.func(runtimeScene, gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSeconds(runtimeScene, "Time"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
-}
-}}
-
-}
-
-
-{
-
-
-gdjs.PvCCode.condition0IsTrue_0.val = false;
-{
-gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "Time") >= 120;
-}if (gdjs.PvCCode.condition0IsTrue_0.val) {
-gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects2);
-{for(var i = 0, len = gdjs.PvCCode.GDTimerObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDTimerObjects2[i].setBBText("[outline=#E73C3C]" + gdjs.evtsExt__TimeFormatter__SecondsToHHMMSS.func(runtimeScene, gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSeconds(runtimeScene, "Time"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) + "[/outline]");
-}
-}}
-
-}
-
-
 };gdjs.PvCCode.eventsList23 = function(runtimeScene) {
-
-{
-
-
-{
-gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects1);
-{for(var i = 0, len = gdjs.PvCCode.GDTimerObjects1.length ;i < len;++i) {
-    gdjs.PvCCode.GDTimerObjects1[i].hide();
-}
-}}
-
-}
-
-
-};gdjs.PvCCode.eventsList24 = function(runtimeScene) {
 
 {
 
@@ -1970,8 +1936,12 @@ gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTest
 
 {
 gdjs.copyArray(runtimeScene.getObjects("PlayerScore"), gdjs.PvCCode.GDPlayerScoreObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects2);
 {for(var i = 0, len = gdjs.PvCCode.GDPlayerScoreObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerScoreObjects2[i].setBBText("[outline=#E73C3C]" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore"))) + "[/outline]");
+    gdjs.PvCCode.GDPlayerScoreObjects2[i].setBBText("[outline=#E73C3C]" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore"))) + "[/outline]" + gdjs.evtTools.string.newLine());
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerScoreObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerScoreObjects2[i].setPosition((( gdjs.PvCCode.GDTimerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDTimerObjects2[0].getAABBLeft()),(( gdjs.PvCCode.GDTimerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDTimerObjects2[0].getY()));
 }
 }}
 
@@ -1983,8 +1953,12 @@ gdjs.copyArray(runtimeScene.getObjects("PlayerScore"), gdjs.PvCCode.GDPlayerScor
 
 {
 gdjs.copyArray(runtimeScene.getObjects("NpcScore"), gdjs.PvCCode.GDNpcScoreObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.PvCCode.GDTimerObjects2);
 {for(var i = 0, len = gdjs.PvCCode.GDNpcScoreObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDNpcScoreObjects2[i].setBBText("[outline=#3CE776]" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore"))) + "[/outline]");
+    gdjs.PvCCode.GDNpcScoreObjects2[i].setBBText("[outline=#3CE776]" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore"))) + "[/outline]" + gdjs.evtTools.string.newLine());
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDNpcScoreObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNpcScoreObjects2[i].setPosition((( gdjs.PvCCode.GDTimerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDTimerObjects2[0].getAABBRight()) - 30,(( gdjs.PvCCode.GDTimerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDTimerObjects2[0].getY()));
 }
 }}
 
@@ -2079,22 +2053,7 @@ gdjs.PvCCode.eventsList22(runtimeScene);} //End of subevents
 }
 
 
-{
-
-
-gdjs.PvCCode.condition0IsTrue_0.val = false;
-{
-gdjs.PvCCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"), false);
-}if (gdjs.PvCCode.condition0IsTrue_0.val) {
-
-{ //Subevents
-gdjs.PvCCode.eventsList23(runtimeScene);} //End of subevents
-}
-
-}
-
-
-};gdjs.PvCCode.eventsList25 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList24 = function(runtimeScene) {
 
 {
 
@@ -2138,7 +2097,7 @@ gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects1);
 }
 
 
-};gdjs.PvCCode.eventsList26 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList25 = function(runtimeScene) {
 
 {
 
@@ -2157,14 +2116,14 @@ gdjs.PvCCode.eventsList4(runtimeScene);
 {
 
 
-gdjs.PvCCode.eventsList24(runtimeScene);
+gdjs.PvCCode.eventsList23(runtimeScene);
 }
 
 
 {
 
 
-gdjs.PvCCode.eventsList25(runtimeScene);
+gdjs.PvCCode.eventsList24(runtimeScene);
 }
 
 
@@ -2218,7 +2177,7 @@ gdjs.PvCCode.GDTimerObjects2.length = 0;
 gdjs.PvCCode.GDTimerObjects3.length = 0;
 gdjs.PvCCode.GDTimerObjects4.length = 0;
 
-gdjs.PvCCode.eventsList26(runtimeScene);
+gdjs.PvCCode.eventsList25(runtimeScene);
 
 return;
 
