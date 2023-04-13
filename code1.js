@@ -143,6 +143,18 @@ gdjs.Title_32ScreenCode.GDAutoDisclaimerObjects1= [];
 gdjs.Title_32ScreenCode.GDAutoDisclaimerObjects2= [];
 gdjs.Title_32ScreenCode.GDAutoDisclaimerObjects3= [];
 gdjs.Title_32ScreenCode.GDAutoDisclaimerObjects4= [];
+gdjs.Title_32ScreenCode.GDComebackToggleObjects1= [];
+gdjs.Title_32ScreenCode.GDComebackToggleObjects2= [];
+gdjs.Title_32ScreenCode.GDComebackToggleObjects3= [];
+gdjs.Title_32ScreenCode.GDComebackToggleObjects4= [];
+gdjs.Title_32ScreenCode.GDComebackTextObjects1= [];
+gdjs.Title_32ScreenCode.GDComebackTextObjects2= [];
+gdjs.Title_32ScreenCode.GDComebackTextObjects3= [];
+gdjs.Title_32ScreenCode.GDComebackTextObjects4= [];
+gdjs.Title_32ScreenCode.GDComebackDisclaimerObjects1= [];
+gdjs.Title_32ScreenCode.GDComebackDisclaimerObjects2= [];
+gdjs.Title_32ScreenCode.GDComebackDisclaimerObjects3= [];
+gdjs.Title_32ScreenCode.GDComebackDisclaimerObjects4= [];
 
 gdjs.Title_32ScreenCode.conditionTrue_0 = {val:false};
 gdjs.Title_32ScreenCode.condition0IsTrue_0 = {val:false};
@@ -256,7 +268,7 @@ for(var i = 0, k = 0, l = gdjs.Title_32ScreenCode.GDTitleObjects1.length;i<l;++i
 gdjs.Title_32ScreenCode.GDTitleObjects1.length = k;}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
 {
 {gdjs.Title_32ScreenCode.conditionTrue_1 = gdjs.Title_32ScreenCode.condition1IsTrue_0;
-gdjs.Title_32ScreenCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9592972);
+gdjs.Title_32ScreenCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9694396);
 }
 }}
 if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
@@ -1215,6 +1227,11 @@ gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDAutoToggleGreenOb
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDAutoToggleGreenObjects2Objects = Hashtable.newFrom({"AutoToggleGreen": gdjs.Title_32ScreenCode.GDAutoToggleGreenObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDAutoToggleGreenObjects2Objects = Hashtable.newFrom({"AutoToggleGreen": gdjs.Title_32ScreenCode.GDAutoToggleGreenObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDAutoToggleGreenObjects2Objects = Hashtable.newFrom({"AutoToggleGreen": gdjs.Title_32ScreenCode.GDAutoToggleGreenObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects = Hashtable.newFrom({"ComebackToggle": gdjs.Title_32ScreenCode.GDComebackToggleObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects = Hashtable.newFrom({"ComebackToggle": gdjs.Title_32ScreenCode.GDComebackToggleObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects = Hashtable.newFrom({"ComebackToggle": gdjs.Title_32ScreenCode.GDComebackToggleObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects = Hashtable.newFrom({"ComebackToggle": gdjs.Title_32ScreenCode.GDComebackToggleObjects2});
+gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects = Hashtable.newFrom({"ComebackToggle": gdjs.Title_32ScreenCode.GDComebackToggleObjects2});
 gdjs.Title_32ScreenCode.eventsList5 = function(runtimeScene) {
 
 {
@@ -1608,6 +1625,133 @@ if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
 {
 
 
+
+}
+
+
+{
+
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+}if (gdjs.Title_32ScreenCode.condition0IsTrue_0.val) {
+{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().get("ComebackToggle"), false);
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("ComebackToggle"), gdjs.Title_32ScreenCode.GDComebackToggleObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("ComebackToggle"), true);
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDComebackToggleObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDComebackToggleObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDComebackToggleObjects2[i].setAnimationName("OnHover");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("ComebackToggle"), gdjs.Title_32ScreenCode.GDComebackToggleObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects, runtimeScene, true, true);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("ComebackToggle"), true);
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDComebackToggleObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDComebackToggleObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDComebackToggleObjects2[i].setAnimationName("On");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("ComebackToggle"), gdjs.Title_32ScreenCode.GDComebackToggleObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("ComebackToggle"), false);
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDComebackToggleObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDComebackToggleObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDComebackToggleObjects2[i].setAnimationName("OffHover");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("ComebackToggle"), gdjs.Title_32ScreenCode.GDComebackToggleObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects, runtimeScene, true, true);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("ComebackToggle"), false);
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+/* Reuse gdjs.Title_32ScreenCode.GDComebackToggleObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDComebackToggleObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDComebackToggleObjects2[i].setAnimationName("Off");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("ComebackToggle"), gdjs.Title_32ScreenCode.GDComebackToggleObjects2);
+
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = false;
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = false;
+{
+gdjs.Title_32ScreenCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_46Title_9532ScreenCode_46GDComebackToggleObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.Title_32ScreenCode.condition0IsTrue_0.val ) {
+{
+gdjs.Title_32ScreenCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+}}
+if (gdjs.Title_32ScreenCode.condition1IsTrue_0.val) {
+{gdjs.evtTools.variable.toggleVariableBoolean(runtimeScene.getGame().getVariables().get("ComebackToggle"));
+}}
+
+}
+
+
+{
+
+
 {
 }
 
@@ -1800,6 +1944,18 @@ gdjs.Title_32ScreenCode.GDAutoDisclaimerObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDAutoDisclaimerObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDAutoDisclaimerObjects3.length = 0;
 gdjs.Title_32ScreenCode.GDAutoDisclaimerObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDComebackToggleObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDComebackToggleObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDComebackToggleObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDComebackToggleObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDComebackTextObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDComebackTextObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDComebackTextObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDComebackTextObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDComebackDisclaimerObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDComebackDisclaimerObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDComebackDisclaimerObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDComebackDisclaimerObjects4.length = 0;
 
 gdjs.Title_32ScreenCode.eventsList6(runtimeScene);
 
