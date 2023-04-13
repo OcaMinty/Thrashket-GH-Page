@@ -107,8 +107,12 @@ gdjs.PvCCode.conditionTrue_1.val = (gdjs.evtTools.variable.getVariableNumber(run
 }
 }if (gdjs.PvCCode.condition0IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
     gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").setMaxSpeed(400);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").setMaxSpeed(300);
 }
 }}
 
@@ -124,9 +128,13 @@ gdjs.PvCCode.condition0IsTrue_0.val = false;
 gdjs.PvCCode.conditionTrue_1.val = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) < gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")));
 }
 }if (gdjs.PvCCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects1);
 {for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects1.length ;i < len;++i) {
     gdjs.PvCCode.GDPlayerObjects1[i].getBehavior("PlatformerObject").setMaxSpeed(400);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects1[i].getBehavior("PlatformerObject").setMaxSpeed(300);
 }
 }}
 
