@@ -7,31 +7,17 @@ if (typeof gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes !== "undefined") {
 
 gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes = {};
 
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_0 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_0 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_0 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition2IsTrue_0 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_1 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_1 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_1 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition2IsTrue_1 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_2 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_2 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_2 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition2IsTrue_2 = {val:false};
-
 
 gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_0.val = false;
-{
-{gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_1 = gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_0;
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_1.val = eventsFunctionContext.getOnceTriggers().triggerOnce(9544172);
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(10028204);
 }
-}if (gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_0.val) {
+if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""));
 }{runtimeScene.getScene().getVariables().get("__RepeatEveryXSeconds_").getChild("Counter").getChild((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : "")).setNumber(0);
 }}
@@ -42,34 +28,31 @@ gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_1.val = eventsFunc
 {
 
 
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_0.val = false;
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_0.val = false;
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("time")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
 {
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("time")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""));
-}if ( gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_0.val ) {
-{
-{gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_1 = gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_0;
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_1.val = false;
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_1.val = false;
-{
-{gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_2 = gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_1;
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_2.val = ((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("limit")) || 0 : 0) == -(1));
+{isConditionTrue_1 = ((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("limit")) || 0 : 0) == -(1));
 }
-if( gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition0IsTrue_1.val ) {
-    gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_1.val = true;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
 }
 }
 {
-gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_1.val = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__RepeatEveryXSeconds_").getChild("Counter").getChild((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""))) < (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("limit")) || 0 : 0);
-if( gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_1.val ) {
-    gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.conditionTrue_1.val = true;
+isConditionTrue_1 = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__RepeatEveryXSeconds_").getChild("Counter").getChild((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""))) < (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("limit")) || 0 : 0);
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
 }
 }
 {
 }
 }
-}}
-if (gdjs.evtsExt__RepeatEveryXSeconds__RepeatXTimes.condition1IsTrue_0.val) {
+}
+if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""));
 }{runtimeScene.getScene().getVariables().get("__RepeatEveryXSeconds_").getChild("Counter").getChild((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : "")).add(1);
 }{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = true; }}}

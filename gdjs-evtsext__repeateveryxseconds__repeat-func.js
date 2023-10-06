@@ -7,25 +7,17 @@ if (typeof gdjs.evtsExt__RepeatEveryXSeconds__Repeat !== "undefined") {
 
 gdjs.evtsExt__RepeatEveryXSeconds__Repeat = {};
 
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.conditionTrue_0 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition0IsTrue_0 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition1IsTrue_0 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.conditionTrue_1 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition0IsTrue_1 = {val:false};
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition1IsTrue_1 = {val:false};
-
 
 gdjs.evtsExt__RepeatEveryXSeconds__Repeat.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition0IsTrue_0.val = false;
-{
-{gdjs.evtsExt__RepeatEveryXSeconds__Repeat.conditionTrue_1 = gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition0IsTrue_0;
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.conditionTrue_1.val = eventsFunctionContext.getOnceTriggers().triggerOnce(9542156);
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(10026188);
 }
-}if (gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition0IsTrue_0.val) {
+if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""));
 }}
 
@@ -35,10 +27,10 @@ gdjs.evtsExt__RepeatEveryXSeconds__Repeat.conditionTrue_1.val = eventsFunctionCo
 {
 
 
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition0IsTrue_0.val = false;
-{
-gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("time")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""));
-}if (gdjs.evtsExt__RepeatEveryXSeconds__Repeat.condition0IsTrue_0.val) {
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("time")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""));
+if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("timerName") : ""));
 }{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = true; }}}
 
