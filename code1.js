@@ -123,10 +123,10 @@ gdjs.Title_32ScreenCode.GDScoringModeObjects1= [];
 gdjs.Title_32ScreenCode.GDScoringModeObjects2= [];
 gdjs.Title_32ScreenCode.GDScoringModeObjects3= [];
 gdjs.Title_32ScreenCode.GDScoringModeObjects4= [];
-gdjs.Title_32ScreenCode.GDTimerToggleObjects1= [];
-gdjs.Title_32ScreenCode.GDTimerToggleObjects2= [];
-gdjs.Title_32ScreenCode.GDTimerToggleObjects3= [];
-gdjs.Title_32ScreenCode.GDTimerToggleObjects4= [];
+gdjs.Title_32ScreenCode.GDTimerObjects1= [];
+gdjs.Title_32ScreenCode.GDTimerObjects2= [];
+gdjs.Title_32ScreenCode.GDTimerObjects3= [];
+gdjs.Title_32ScreenCode.GDTimerObjects4= [];
 gdjs.Title_32ScreenCode.GDTimerTextObjects1= [];
 gdjs.Title_32ScreenCode.GDTimerTextObjects2= [];
 gdjs.Title_32ScreenCode.GDTimerTextObjects3= [];
@@ -308,7 +308,7 @@ for (var i = 0, k = 0, l = gdjs.Title_32ScreenCode.GDTitleObjects1.length;i<l;++
 gdjs.Title_32ScreenCode.GDTitleObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9971444);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22327852);
 }
 }
 if (isConditionTrue_0) {
@@ -503,7 +503,7 @@ gdjs.Title_32ScreenCode.eventsList3 = function(runtimeScene) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(8423468);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22344068);
 }
 if (isConditionTrue_0) {
 {runtimeScene.getGame().getVariables().get("Gamemode").setString("Classic");
@@ -767,7 +767,7 @@ gdjs.Title_32ScreenCode.eventsList4 = function(runtimeScene) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10107348);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22357388);
 }
 if (isConditionTrue_0) {
 {runtimeScene.getGame().getVariables().get("BallSkin").setString("Default");
@@ -1278,12 +1278,7 @@ gdjs.copyArray(runtimeScene.getObjects("SkullSkin"), gdjs.Title_32ScreenCode.GDS
 }
 
 
-};gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects = Hashtable.newFrom({"TimerToggle": gdjs.Title_32ScreenCode.GDTimerToggleObjects2});
-gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects = Hashtable.newFrom({"TimerToggle": gdjs.Title_32ScreenCode.GDTimerToggleObjects2});
-gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects = Hashtable.newFrom({"TimerToggle": gdjs.Title_32ScreenCode.GDTimerToggleObjects2});
-gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects = Hashtable.newFrom({"TimerToggle": gdjs.Title_32ScreenCode.GDTimerToggleObjects2});
-gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects = Hashtable.newFrom({"TimerToggle": gdjs.Title_32ScreenCode.GDTimerToggleObjects2});
-gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDAutoToggleRedObjects2Objects = Hashtable.newFrom({"AutoToggleRed": gdjs.Title_32ScreenCode.GDAutoToggleRedObjects2});
+};gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDAutoToggleRedObjects2Objects = Hashtable.newFrom({"AutoToggleRed": gdjs.Title_32ScreenCode.GDAutoToggleRedObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDAutoToggleRedObjects2Objects = Hashtable.newFrom({"AutoToggleRed": gdjs.Title_32ScreenCode.GDAutoToggleRedObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDAutoToggleRedObjects2Objects = Hashtable.newFrom({"AutoToggleRed": gdjs.Title_32ScreenCode.GDAutoToggleRedObjects2});
 gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDAutoToggleRedObjects2Objects = Hashtable.newFrom({"AutoToggleRed": gdjs.Title_32ScreenCode.GDAutoToggleRedObjects2});
@@ -1320,129 +1315,6 @@ gdjs.Title_32ScreenCode.eventsList5 = function(runtimeScene) {
 {
 
 
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(8554924);
-}
-if (isConditionTrue_0) {
-{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"), false);
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("TimerToggle"), gdjs.Title_32ScreenCode.GDTimerToggleObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects, runtimeScene, true, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"), true);
-}
-if (isConditionTrue_0) {
-/* Reuse gdjs.Title_32ScreenCode.GDTimerToggleObjects2 */
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDTimerToggleObjects2.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDTimerToggleObjects2[i].setAnimationName("OnHover");
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("TimerToggle"), gdjs.Title_32ScreenCode.GDTimerToggleObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects, runtimeScene, true, true);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"), true);
-}
-if (isConditionTrue_0) {
-/* Reuse gdjs.Title_32ScreenCode.GDTimerToggleObjects2 */
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDTimerToggleObjects2.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDTimerToggleObjects2[i].setAnimationName("On");
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("TimerToggle"), gdjs.Title_32ScreenCode.GDTimerToggleObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects, runtimeScene, true, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"), false);
-}
-if (isConditionTrue_0) {
-/* Reuse gdjs.Title_32ScreenCode.GDTimerToggleObjects2 */
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDTimerToggleObjects2.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDTimerToggleObjects2[i].setAnimationName("OffHover");
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("TimerToggle"), gdjs.Title_32ScreenCode.GDTimerToggleObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects, runtimeScene, true, true);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"), false);
-}
-if (isConditionTrue_0) {
-/* Reuse gdjs.Title_32ScreenCode.GDTimerToggleObjects2 */
-{for(var i = 0, len = gdjs.Title_32ScreenCode.GDTimerToggleObjects2.length ;i < len;++i) {
-    gdjs.Title_32ScreenCode.GDTimerToggleObjects2[i].setAnimationName("Off");
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("TimerToggle"), gdjs.Title_32ScreenCode.GDTimerToggleObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Title_32ScreenCode.mapOfGDgdjs_9546Title_959532ScreenCode_9546GDTimerToggleObjects2Objects, runtimeScene, true, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-}
-if (isConditionTrue_0) {
-{gdjs.evtTools.variable.toggleVariableBoolean(runtimeScene.getGame().getVariables().get("TimerToggle"));
-}}
-
-}
-
-
-{
-
-
-
-}
-
-
-{
-
-
 
 }
 
@@ -1452,7 +1324,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10255092);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22378028);
 }
 if (isConditionTrue_0) {
 {gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().get("AutoToggleRed"), false);
@@ -1575,7 +1447,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9486692);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22380644);
 }
 if (isConditionTrue_0) {
 {gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().get("AutoToggleGreen"), false);
@@ -1698,7 +1570,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10261900);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22387028);
 }
 if (isConditionTrue_0) {
 {gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().get("ComebackToggle"), false);
@@ -1828,7 +1700,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(8423300);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22393652);
 }
 if (isConditionTrue_0) {
 {gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().get("ChargeToggleRed"), false);
@@ -1951,7 +1823,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10267548);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22400460);
 }
 if (isConditionTrue_0) {
 {gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().get("ChargeToggleGreen"), false);
@@ -2077,7 +1949,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("AutoToggleRed"), true);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9234244);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22414812);
 }
 }
 if (isConditionTrue_0) {
@@ -2095,7 +1967,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("AutoToggleGreen"), true);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10235324);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22416012);
 }
 }
 if (isConditionTrue_0) {
@@ -2113,7 +1985,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("ChargeToggleRed"), true);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10276452);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22417332);
 }
 }
 if (isConditionTrue_0) {
@@ -2131,7 +2003,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("ChargeToggleGreen"), true);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10256556);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22418836);
 }
 }
 if (isConditionTrue_0) {
@@ -2198,7 +2070,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("Gamemode")) == "Classic";
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10461468);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22422244);
 }
 }
 if (isConditionTrue_0) {
@@ -2219,7 +2091,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("Gamemode")) == "Lives";
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9738836);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22423004);
 }
 }
 if (isConditionTrue_0) {
@@ -2240,7 +2112,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("Gamemode")) == "Combo";
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9928220);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22423764);
 }
 }
 if (isConditionTrue_0) {
@@ -2258,9 +2130,97 @@ gdjs.copyArray(runtimeScene.getObjects("WinScore"), gdjs.Title_32ScreenCode.GDWi
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(runtimeScene.getObjects("WinScore"), gdjs.Title_32ScreenCode.GDWinScoreObjects1);
-{runtimeScene.getGame().getVariables().get("WinningScore").setNumber(gdjs.evtTools.common.toNumber((( gdjs.Title_32ScreenCode.GDWinScoreObjects1.length === 0 ) ? "" :gdjs.Title_32ScreenCode.GDWinScoreObjects1[0].getString())));
+gdjs.copyArray(runtimeScene.getObjects("WinScore"), gdjs.Title_32ScreenCode.GDWinScoreObjects2);
+{runtimeScene.getGame().getVariables().get("WinningScore").setNumber(gdjs.evtTools.common.toNumber((( gdjs.Title_32ScreenCode.GDWinScoreObjects2.length === 0 ) ? "" :gdjs.Title_32ScreenCode.GDWinScoreObjects2[0].getString())));
 }}
+
+}
+
+
+{
+
+
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.Title_32ScreenCode.GDTimerObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.Title_32ScreenCode.GDTimerObjects2.length;i<l;++i) {
+    if ( gdjs.Title_32ScreenCode.GDTimerObjects2[i].getString() == "" ) {
+        isConditionTrue_0 = true;
+        gdjs.Title_32ScreenCode.GDTimerObjects2[k] = gdjs.Title_32ScreenCode.GDTimerObjects2[i];
+        ++k;
+    }
+}
+gdjs.Title_32ScreenCode.GDTimerObjects2.length = k;
+if (isConditionTrue_0) {
+/* Reuse gdjs.Title_32ScreenCode.GDTimerObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDTimerObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDTimerObjects2[i].setString("1");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.Title_32ScreenCode.GDTimerObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = (gdjs.evtTools.common.toNumber((( gdjs.Title_32ScreenCode.GDTimerObjects2.length === 0 ) ? "" :gdjs.Title_32ScreenCode.GDTimerObjects2[0].getString())) < 1);
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.Title_32ScreenCode.GDTimerObjects2 */
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDTimerObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDTimerObjects2[i].setString("1");
+}
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22427572);
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.Title_32ScreenCode.GDTimerObjects2);
+{for(var i = 0, len = gdjs.Title_32ScreenCode.GDTimerObjects2.length ;i < len;++i) {
+    gdjs.Title_32ScreenCode.GDTimerObjects2[i].setString("180");
+}
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+gdjs.copyArray(runtimeScene.getObjects("Timer"), gdjs.Title_32ScreenCode.GDTimerObjects2);
+{runtimeScene.getGame().getVariables().get("TimerTime").setNumber(gdjs.evtTools.common.toNumber((( gdjs.Title_32ScreenCode.GDTimerObjects2.length === 0 ) ? "" :gdjs.Title_32ScreenCode.GDTimerObjects2[0].getString())));
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+}
 
 }
 
@@ -2431,10 +2391,10 @@ gdjs.Title_32ScreenCode.GDScoringModeObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDScoringModeObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDScoringModeObjects3.length = 0;
 gdjs.Title_32ScreenCode.GDScoringModeObjects4.length = 0;
-gdjs.Title_32ScreenCode.GDTimerToggleObjects1.length = 0;
-gdjs.Title_32ScreenCode.GDTimerToggleObjects2.length = 0;
-gdjs.Title_32ScreenCode.GDTimerToggleObjects3.length = 0;
-gdjs.Title_32ScreenCode.GDTimerToggleObjects4.length = 0;
+gdjs.Title_32ScreenCode.GDTimerObjects1.length = 0;
+gdjs.Title_32ScreenCode.GDTimerObjects2.length = 0;
+gdjs.Title_32ScreenCode.GDTimerObjects3.length = 0;
+gdjs.Title_32ScreenCode.GDTimerObjects4.length = 0;
 gdjs.Title_32ScreenCode.GDTimerTextObjects1.length = 0;
 gdjs.Title_32ScreenCode.GDTimerTextObjects2.length = 0;
 gdjs.Title_32ScreenCode.GDTimerTextObjects3.length = 0;
