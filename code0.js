@@ -181,12 +181,22 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects1);
+gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects2);
 {gdjs.evtTools.runtimeScene.createObjectsFromExternalLayout(runtimeScene, "Crystal Pass", 0, 0);
-}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects1.length ;i < len;++i) {
-    gdjs.PvCCode.GDTeamWonObjects1[i].hide(false);
+}{for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDTeamWonObjects2[i].hide(false);
 }
 }}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+}
 
 }
 
@@ -418,6 +428,9 @@ if (isConditionTrue_0) {
 }
 }{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").setLinearVelocityY(0);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").setLinearVelocityX(0);
 }
 }}
 
@@ -1039,6 +1052,9 @@ if (isConditionTrue_0) {
 }
 }{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").setLinearVelocityY(0);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").setLinearVelocityX(0);
 }
 }}
 
