@@ -5,6 +5,8 @@ gdjs.PvCCode.GDGroundObjects2_1final = [];
 
 gdjs.PvCCode.GDNPCObjects2_1final = [];
 
+gdjs.PvCCode.GDNPCObjects4_1final = [];
+
 gdjs.PvCCode.GDRedBoxObjects2_1final = [];
 
 gdjs.PvCCode.GDGroundObjects1= [];
@@ -109,6 +111,24 @@ gdjs.PvCCode.GDGreenBarObjects3= [];
 gdjs.PvCCode.GDGreenBarObjects4= [];
 gdjs.PvCCode.GDGreenBarObjects5= [];
 gdjs.PvCCode.GDGreenBarObjects6= [];
+gdjs.PvCCode.GDDefaultThrowSpotObjects1= [];
+gdjs.PvCCode.GDDefaultThrowSpotObjects2= [];
+gdjs.PvCCode.GDDefaultThrowSpotObjects3= [];
+gdjs.PvCCode.GDDefaultThrowSpotObjects4= [];
+gdjs.PvCCode.GDDefaultThrowSpotObjects5= [];
+gdjs.PvCCode.GDDefaultThrowSpotObjects6= [];
+gdjs.PvCCode.GDHighThrowSpotObjects1= [];
+gdjs.PvCCode.GDHighThrowSpotObjects2= [];
+gdjs.PvCCode.GDHighThrowSpotObjects3= [];
+gdjs.PvCCode.GDHighThrowSpotObjects4= [];
+gdjs.PvCCode.GDHighThrowSpotObjects5= [];
+gdjs.PvCCode.GDHighThrowSpotObjects6= [];
+gdjs.PvCCode.GDFarThrowSpotObjects1= [];
+gdjs.PvCCode.GDFarThrowSpotObjects2= [];
+gdjs.PvCCode.GDFarThrowSpotObjects3= [];
+gdjs.PvCCode.GDFarThrowSpotObjects4= [];
+gdjs.PvCCode.GDFarThrowSpotObjects5= [];
+gdjs.PvCCode.GDFarThrowSpotObjects6= [];
 
 
 gdjs.PvCCode.eventsList0 = function(runtimeScene) {
@@ -121,13 +141,19 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) > gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")));
 }
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
-{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").setMaxSpeed(400);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").setMaxSpeed(300 + (((gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) - gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore"))) / gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().get("WinningScore"))) * 100));
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").setMaxSpeed(300);
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects3[i].getBehavior("PlatformerObject").setMaxSpeed(300);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").setJumpSustainTime(0.3);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects3[i].getBehavior("PlatformerObject").setJumpSustainTime(0.2);
 }
 }}
 
@@ -142,20 +168,34 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) < gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")));
 }
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects1);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects1);
-{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects1.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerObjects1[i].getBehavior("PlatformerObject").setMaxSpeed(400);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
+{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").setMaxSpeed(300 + (((gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")) - gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore"))) / gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().get("WinningScore"))) * 100));
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects1.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects1[i].getBehavior("PlatformerObject").setMaxSpeed(300);
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").setMaxSpeed(300);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").setJumpSustainTime(0.3);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").setJumpSustainTime(0.2);
 }
 }}
 
 }
 
 
-};gdjs.PvCCode.eventsList1 = function(runtimeScene) {
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects1Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects1});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects1Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects1});
+gdjs.PvCCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -172,7 +212,259 @@ gdjs.PvCCode.eventsList0(runtimeScene);} //End of subevents
 }
 
 
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, true, runtimeScene, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").setGravity(1000);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").setGravity(1500);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, true, runtimeScene, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDPlayerObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").setGravity(1000);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects1);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects1Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects1Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDPlayerObjects1 */
+{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDPlayerObjects1[i].getBehavior("PlatformerObject").setGravity(1500);
+}
+}}
+
+}
+
+
 };gdjs.PvCCode.eventsList2 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].setAnimationName(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("BallSkin")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Invis") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].activateBehavior("LightObstacleBehavior", true);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Invis")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].activateBehavior("LightObstacleBehavior", false);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Solar") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Skull") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].getBehavior("Physics2").setGravityScale(0.2);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Skull")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].getBehavior("Physics2").setGravityScale(1);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Gold") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].setLayer("AboveLight");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects1.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects1[i].isCurrentAnimationName("Gold")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects1[k] = gdjs.PvCCode.GDBallObjects1[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects1.length = k;
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects1 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects1[i].setLayer("");
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.eventsList3 = function(runtimeScene) {
 
 {
 
@@ -201,17 +493,13 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects4});
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
-gdjs.PvCCode.eventsList3 = function(runtimeScene) {
+gdjs.PvCCode.eventsList4 = function(runtimeScene) {
 
 {
 
@@ -243,13 +531,13 @@ isConditionTrue_0 = false;
 {let isConditionTrue_1 = false;
 isConditionTrue_0 = false;
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
 }
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
@@ -259,15 +547,19 @@ if(isConditionTrue_1) {
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22165964);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11160548);
 }
 }
 }
 }
 if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
 /* Reuse gdjs.PvCCode.GDPlayerObjects4 */
 {for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects4.length ;i < len;++i) {
     gdjs.PvCCode.GDPlayerObjects4[i].returnVariable(gdjs.PvCCode.GDPlayerObjects4[i].getVariables().get("ChargeDistance")).setNumber(20);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].returnVariable(gdjs.PvCCode.GDBallObjects4[i].getVariables().get("BallHolder")).setString("Player");
 }
 }}
 
@@ -290,13 +582,13 @@ isConditionTrue_0 = false;
 {let isConditionTrue_1 = false;
 isConditionTrue_0 = false;
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
 }
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
@@ -307,6 +599,7 @@ if(isConditionTrue_1) {
 }
 }
 if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
 /* Reuse gdjs.PvCCode.GDPlayerObjects4 */
 gdjs.copyArray(runtimeScene.getObjects("RedBar"), gdjs.PvCCode.GDRedBarObjects4);
 {for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects4.length ;i < len;++i) {
@@ -314,6 +607,9 @@ gdjs.copyArray(runtimeScene.getObjects("RedBar"), gdjs.PvCCode.GDRedBarObjects4)
 }
 }{for(var i = 0, len = gdjs.PvCCode.GDRedBarObjects4.length ;i < len;++i) {
     gdjs.PvCCode.GDRedBarObjects4[i].hide(false);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].returnVariable(gdjs.PvCCode.GDBallObjects4[i].getVariables().get("BallHolder")).setString("Player");
 }
 }}
 
@@ -344,11 +640,471 @@ gdjs.copyArray(runtimeScene.getObjects("RedBar"), gdjs.PvCCode.GDRedBarObjects3)
 };gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.eventsList5 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDPlayerObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDPlayerObjects4[k] = gdjs.PvCCode.GDPlayerObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDPlayerObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDPlayerObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDPlayerObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDPlayerObjects3[k] = gdjs.PvCCode.GDPlayerObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDPlayerObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDPlayerObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.eventsList6 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDPlayerObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDPlayerObjects4[k] = gdjs.PvCCode.GDPlayerObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDPlayerObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDPlayerObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects4[0].getVariables()).get("ChargeDistance"))))), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDPlayerObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDPlayerObjects3[k] = gdjs.PvCCode.GDPlayerObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDPlayerObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDPlayerObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance")))), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.eventsList7 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDPlayerObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDPlayerObjects4[k] = gdjs.PvCCode.GDPlayerObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDPlayerObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDPlayerObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects4[0].getVariables()).get("ChargeDistance"))))), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDPlayerObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDPlayerObjects3[k] = gdjs.PvCCode.GDPlayerObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDPlayerObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDPlayerObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance"))))), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.eventsList4 = function(runtimeScene) {
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects2Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects2});
+gdjs.PvCCode.eventsList8 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects2, gdjs.PvCCode.GDBallObjects3);
+
+gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects3);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDPlayerObjects3[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDPlayerObjects3[k] = gdjs.PvCCode.GDPlayerObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDPlayerObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDGoalObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDGoalObjects3[i].getCenterXInScene() < (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getCenterXInScene()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDGoalObjects3[k] = gdjs.PvCCode.GDGoalObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDGoalObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects, (( gdjs.PvCCode.GDBallObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDBallObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects3[0].getCenterYInScene()), false);
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDGoalObjects3 */
+/* Reuse gdjs.PvCCode.GDPlayerObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyPolarForce(gdjs.evtTools.common.angleBetweenPositions((gdjs.PvCCode.GDBallObjects3[i].getCenterXInScene()), (gdjs.PvCCode.GDBallObjects3[i].getCenterYInScene()), (( gdjs.PvCCode.GDGoalObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDGoalObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects3[0].getCenterYInScene())), ((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance"))) / 2), 0, 0);
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects2.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDPlayerObjects2[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDPlayerObjects2[k] = gdjs.PvCCode.GDPlayerObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDPlayerObjects2.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDGoalObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDGoalObjects2[i].getCenterXInScene() > (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getCenterXInScene()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDGoalObjects2[k] = gdjs.PvCCode.GDGoalObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDGoalObjects2.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects2Objects, (( gdjs.PvCCode.GDBallObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects2[0].getCenterXInScene()), (( gdjs.PvCCode.GDBallObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects2[0].getCenterYInScene()), false);
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+/* Reuse gdjs.PvCCode.GDGoalObjects2 */
+/* Reuse gdjs.PvCCode.GDPlayerObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].getBehavior("Physics2").applyPolarForce(gdjs.evtTools.common.angleBetweenPositions((gdjs.PvCCode.GDBallObjects2[i].getCenterXInScene()), (gdjs.PvCCode.GDBallObjects2[i].getCenterYInScene()), (( gdjs.PvCCode.GDGoalObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects2[0].getCenterXInScene()), (( gdjs.PvCCode.GDGoalObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects2[0].getCenterYInScene())), ((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects2[0].getVariables()).get("ChargeDistance"))) / 2), 0, 0);
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.eventsList9 = function(runtimeScene) {
 
 {
 
@@ -379,7 +1135,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGa
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList3(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList4(runtimeScene);} //End of subevents
 }
 
 }
@@ -398,13 +1154,13 @@ isConditionTrue_0 = false;
 {let isConditionTrue_1 = false;
 isConditionTrue_0 = false;
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
 }
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedDown")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
@@ -432,6 +1188,9 @@ if (isConditionTrue_0) {
 }{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").setLinearVelocityX(0);
 }
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].returnVariable(gdjs.PvCCode.GDBallObjects3[i].getVariables().get("BallHolder")).setString("Player");
+}
 }}
 
 }
@@ -440,52 +1199,90 @@ if (isConditionTrue_0) {
 {
 
 gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects3.length;i<l;++i) {
-    if ( gdjs.PvCCode.GDPlayerObjects3[i].isFlippedX() ) {
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Solar")) ) {
         isConditionTrue_0 = true;
-        gdjs.PvCCode.GDPlayerObjects3[k] = gdjs.PvCCode.GDPlayerObjects3[i];
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
         ++k;
     }
 }
-gdjs.PvCCode.GDPlayerObjects3.length = k;
+gdjs.PvCCode.GDBallObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Earth")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Up");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Gold")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
 }
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Down");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
+gdjs.PvCCode.GDBallObjects3.length = k;
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDBallObjects3 */
-/* Reuse gdjs.PvCCode.GDPlayerObjects3 */
-{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects3[i].setY(gdjs.PvCCode.GDBallObjects3[i].getY() - (32));
+
+{ //Subevents
+gdjs.PvCCode.eventsList5(runtimeScene);} //End of subevents
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects3[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+
 }
-}}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Solar") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList6(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Earth") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList7(runtimeScene);} //End of subevents
+}
 
 }
 
@@ -493,49 +1290,22 @@ if (isConditionTrue_0) {
 {
 
 gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.PvCCode.GDPlayerObjects2.length;i<l;++i) {
-    if ( !(gdjs.PvCCode.GDPlayerObjects2[i].isFlippedX()) ) {
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Gold") ) {
         isConditionTrue_0 = true;
-        gdjs.PvCCode.GDPlayerObjects2[k] = gdjs.PvCCode.GDPlayerObjects2[i];
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
         ++k;
     }
 }
-gdjs.PvCCode.GDPlayerObjects2.length = k;
+gdjs.PvCCode.GDBallObjects2.length = k;
 if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Up");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
+
+{ //Subevents
+gdjs.PvCCode.eventsList8(runtimeScene);} //End of subevents
 }
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Down");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
-}
-}
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDBallObjects2 */
-/* Reuse gdjs.PvCCode.GDPlayerObjects2 */
-{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects2[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects2[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDPlayerObjects2[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointY("")));
-}
-}}
 
 }
 
@@ -544,7 +1314,7 @@ if (isConditionTrue_0) {
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects1Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects1});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects1Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects1});
-gdjs.PvCCode.eventsList5 = function(runtimeScene) {
+gdjs.PvCCode.eventsList10 = function(runtimeScene) {
 
 {
 
@@ -570,6 +1340,9 @@ if (isConditionTrue_0) {
 /* Reuse gdjs.PvCCode.GDPlayerObjects2 */
 {for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects2[i].getBehavior("Physics2").applyForce(-(50), -(50), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointY("")));
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].returnVariable(gdjs.PvCCode.GDBallObjects2[i].getVariables().get("BallHolder")).setString("Player");
 }
 }}
 
@@ -601,12 +1374,15 @@ if (isConditionTrue_0) {
 {for(var i = 0, len = gdjs.PvCCode.GDBallObjects1.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects1[i].getBehavior("Physics2").applyForce(50, -(50), (( gdjs.PvCCode.GDPlayerObjects1.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects1[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects1.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects1[0].getPointY("")));
 }
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects1.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects1[i].returnVariable(gdjs.PvCCode.GDBallObjects1[i].getVariables().get("BallHolder")).setString("Player");
+}
 }}
 
 }
 
 
-};gdjs.PvCCode.eventsList6 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList11 = function(runtimeScene) {
 
 {
 
@@ -620,7 +1396,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Left");
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedLeft")));
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
 {for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
@@ -636,7 +1412,7 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2)
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Right");
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedRight")));
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
 {for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
@@ -652,7 +1428,7 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2)
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up");
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("RedUp")));
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
 {for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
@@ -720,42 +1496,6 @@ if (isConditionTrue_0) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, true, runtimeScene, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDPlayerObjects2 */
-{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").setGravity(1000);
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDPlayerObjects2 */
-{for(var i = 0, len = gdjs.PvCCode.GDPlayerObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").setGravity(1500);
-}
-}}
-
-}
-
-
-{
-
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
@@ -763,7 +1503,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGa
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList4(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList9(runtimeScene);} //End of subevents
 }
 
 }
@@ -782,13 +1522,13 @@ gdjs.copyArray(runtimeScene.getObjects("RedBar"), gdjs.PvCCode.GDRedBarObjects1)
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList5(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList10(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.PvCCode.eventsList7 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList12 = function(runtimeScene) {
 
 {
 
@@ -815,27 +1555,19 @@ if(isConditionTrue_1) {
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList6(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList11(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects5});
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects5});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects5});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects5});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects5});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects5});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects5});
-gdjs.PvCCode.eventsList8 = function(runtimeScene) {
+gdjs.PvCCode.eventsList13 = function(runtimeScene) {
 
 {
 
@@ -867,13 +1599,13 @@ isConditionTrue_0 = false;
 {let isConditionTrue_1 = false;
 isConditionTrue_0 = false;
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "w");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
 }
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "s");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
@@ -883,15 +1615,19 @@ if(isConditionTrue_1) {
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22191996);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11196244);
 }
 }
 }
 }
 if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects5 */
 /* Reuse gdjs.PvCCode.GDNPCObjects5 */
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects5.length ;i < len;++i) {
     gdjs.PvCCode.GDNPCObjects5[i].returnVariable(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")).setNumber(20);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects5.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects5[i].returnVariable(gdjs.PvCCode.GDBallObjects5[i].getVariables().get("BallHolder")).setString("NPC");
 }
 }}
 
@@ -914,13 +1650,13 @@ isConditionTrue_0 = false;
 {let isConditionTrue_1 = false;
 isConditionTrue_0 = false;
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "w");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
 }
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "s");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
@@ -931,6 +1667,7 @@ if(isConditionTrue_1) {
 }
 }
 if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects5 */
 gdjs.copyArray(runtimeScene.getObjects("GreenBar"), gdjs.PvCCode.GDGreenBarObjects5);
 /* Reuse gdjs.PvCCode.GDNPCObjects5 */
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects5.length ;i < len;++i) {
@@ -938,6 +1675,9 @@ gdjs.copyArray(runtimeScene.getObjects("GreenBar"), gdjs.PvCCode.GDGreenBarObjec
 }
 }{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects5.length ;i < len;++i) {
     gdjs.PvCCode.GDGreenBarObjects5[i].hide(false);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects5.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects5[i].returnVariable(gdjs.PvCCode.GDBallObjects5[i].getVariables().get("BallHolder")).setString("NPC");
 }
 }}
 
@@ -968,11 +1708,477 @@ gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
 };gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects5});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects5});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.eventsList14 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects4, gdjs.PvCCode.GDBallObjects5);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects5);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects5 */
+/* Reuse gdjs.PvCCode.GDNPCObjects5 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects5);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects5.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects5[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects5.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects5[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects5.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects5[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects5.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects5[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects5.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects5[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects4[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects5});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects5});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.eventsList15 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects4, gdjs.PvCCode.GDBallObjects5);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects5);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects5 */
+/* Reuse gdjs.PvCCode.GDNPCObjects5 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects5);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects5.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects5[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects5.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects5[0].getVariables()).get("ChargeDistance"))))), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects5.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects5[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects5.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects5[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects5.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects5[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects4[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance")))), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects5});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects5});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.eventsList16 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects4, gdjs.PvCCode.GDBallObjects5);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects5);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects5Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects5Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects5 */
+/* Reuse gdjs.PvCCode.GDNPCObjects5 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects5);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects5.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects5[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects5.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects5[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects5.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects5[0].getVariables()).get("ChargeDistance"))))), (( gdjs.PvCCode.GDPlayerObjects5.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects5[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects5.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects5[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects4[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))))), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects4Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects4});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
-gdjs.PvCCode.eventsList9 = function(runtimeScene) {
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
+gdjs.PvCCode.eventsList17 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDGoalObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDGoalObjects4[i].getCenterXInScene() < (( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getCenterXInScene()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDGoalObjects4[k] = gdjs.PvCCode.GDGoalObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDGoalObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects4Objects, (( gdjs.PvCCode.GDBallObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects4[0].getCenterXInScene()), (( gdjs.PvCCode.GDBallObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects4[0].getCenterYInScene()), false);
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDGoalObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyPolarForce(gdjs.evtTools.common.angleBetweenPositions((gdjs.PvCCode.GDBallObjects4[i].getCenterXInScene()), (gdjs.PvCCode.GDBallObjects4[i].getCenterYInScene()), (( gdjs.PvCCode.GDGoalObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects4[0].getCenterXInScene()), (( gdjs.PvCCode.GDGoalObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects4[0].getCenterYInScene())), ((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2), 0, 0);
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects3);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDGoalObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDGoalObjects3[i].getCenterXInScene() > (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDGoalObjects3[k] = gdjs.PvCCode.GDGoalObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDGoalObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects, (( gdjs.PvCCode.GDBallObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDBallObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects3[0].getCenterYInScene()), false);
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDGoalObjects3 */
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyPolarForce(gdjs.evtTools.common.angleBetweenPositions((gdjs.PvCCode.GDBallObjects3[i].getCenterXInScene()), (gdjs.PvCCode.GDBallObjects3[i].getCenterYInScene()), (( gdjs.PvCCode.GDGoalObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDGoalObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects3[0].getCenterYInScene())), ((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2), 0, 0);
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.eventsList18 = function(runtimeScene) {
 
 {
 
@@ -1003,7 +2209,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGa
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList8(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList13(runtimeScene);} //End of subevents
 }
 
 }
@@ -1022,13 +2228,13 @@ isConditionTrue_0 = false;
 {let isConditionTrue_1 = false;
 isConditionTrue_0 = false;
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "w");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
 }
 {
-isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "s");
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenDown")));
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
 }
@@ -1056,6 +2262,9 @@ if (isConditionTrue_0) {
 }{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").setLinearVelocityX(0);
 }
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].returnVariable(gdjs.PvCCode.GDBallObjects4[i].getVariables().get("BallHolder")).setString("NPC");
+}
 }}
 
 }
@@ -1064,53 +2273,90 @@ if (isConditionTrue_0) {
 {
 
 gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects4);
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
-    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects4[i].isCurrentAnimationName("Solar")) ) {
         isConditionTrue_0 = true;
-        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        gdjs.PvCCode.GDBallObjects4[k] = gdjs.PvCCode.GDBallObjects4[i];
         ++k;
     }
 }
-gdjs.PvCCode.GDNPCObjects4.length = k;
+gdjs.PvCCode.GDBallObjects4.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects4[i].isCurrentAnimationName("Earth")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects4[k] = gdjs.PvCCode.GDBallObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects4.length = k;
+if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "w");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects4[i].isCurrentAnimationName("Gold")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects4[k] = gdjs.PvCCode.GDBallObjects4[i];
+        ++k;
+    }
 }
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "s");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
+gdjs.PvCCode.GDBallObjects4.length = k;
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDBallObjects4 */
-/* Reuse gdjs.PvCCode.GDNPCObjects4 */
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
-{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects4[i].setY(gdjs.PvCCode.GDBallObjects4[i].getY() - (32));
+
+{ //Subevents
+gdjs.PvCCode.eventsList14(runtimeScene);} //End of subevents
 }
-}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+
 }
-}}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects4[i].isCurrentAnimationName("Solar") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects4[k] = gdjs.PvCCode.GDBallObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects4.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList15(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects4[i].isCurrentAnimationName("Earth") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects4[k] = gdjs.PvCCode.GDBallObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects4.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList16(runtimeScene);} //End of subevents
+}
 
 }
 
@@ -1118,50 +2364,22 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4)
 {
 
 gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
-    if ( !(gdjs.PvCCode.GDNPCObjects3[i].isFlippedX()) ) {
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Gold") ) {
         isConditionTrue_0 = true;
-        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
         ++k;
     }
 }
-gdjs.PvCCode.GDNPCObjects3.length = k;
+gdjs.PvCCode.GDBallObjects3.length = k;
 if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "w");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
+
+{ //Subevents
+gdjs.PvCCode.eventsList17(runtimeScene);} //End of subevents
 }
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "s");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
-}
-}
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDBallObjects3 */
-/* Reuse gdjs.PvCCode.GDNPCObjects3 */
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
-{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
-}
-}}
 
 }
 
@@ -1170,7 +2388,7 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3)
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.eventsList10 = function(runtimeScene) {
+gdjs.PvCCode.eventsList19 = function(runtimeScene) {
 
 {
 
@@ -1196,6 +2414,9 @@ if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
 {for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(-(50), -(50), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].returnVariable(gdjs.PvCCode.GDBallObjects3[i].getVariables().get("BallHolder")).setString("NPC");
 }
 }}
 
@@ -1227,12 +2448,15 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2)
 {for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects2[i].getBehavior("Physics2").applyForce(50, -(50), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointY("")));
 }
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].returnVariable(gdjs.PvCCode.GDBallObjects2[i].getVariables().get("BallHolder")).setString("NPC");
+}
 }}
 
 }
 
 
-};gdjs.PvCCode.eventsList11 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList20 = function(runtimeScene) {
 
 {
 
@@ -1246,7 +2470,7 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2)
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "a");
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenLeft")));
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
@@ -1262,7 +2486,7 @@ gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "d");
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenRight")));
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
@@ -1278,7 +2502,7 @@ gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "w");
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("GreenUp")));
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
@@ -1346,42 +2570,6 @@ if (isConditionTrue_0) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, true, runtimeScene, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDNPCObjects3 */
-{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").setGravity(1000);
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDNPCObjects3 */
-{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").setGravity(1500);
-}
-}}
-
-}
-
-
-{
-
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
@@ -1389,7 +2577,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGa
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList9(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList18(runtimeScene);} //End of subevents
 }
 
 }
@@ -1408,31 +2596,47 @@ gdjs.copyArray(runtimeScene.getObjects("GreenBar"), gdjs.PvCCode.GDGreenBarObjec
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList10(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList19(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGroundObjects3Objects = Hashtable.newFrom({"Ground": gdjs.PvCCode.GDGroundObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDRedBoxObjects3Objects = Hashtable.newFrom({"RedBox": gdjs.PvCCode.GDRedBoxObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGreenBoxObjects3Objects = Hashtable.newFrom({"GreenBox": gdjs.PvCCode.GDGreenBoxObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGroundObjects3Objects = Hashtable.newFrom({"Ground": gdjs.PvCCode.GDGroundObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDRedBoxObjects3Objects = Hashtable.newFrom({"RedBox": gdjs.PvCCode.GDRedBoxObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGreenBoxObjects3Objects = Hashtable.newFrom({"GreenBox": gdjs.PvCCode.GDGreenBoxObjects3});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.eventsList12 = function(runtimeScene) {
+gdjs.PvCCode.eventsList21 = function(runtimeScene) {
 
 {
 
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
 
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(-(50), -(50), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].returnVariable(gdjs.PvCCode.GDBallObjects3[i].getVariables().get("BallHolder")).setString("NPC");
+}
+}}
 
 }
 
@@ -1462,6 +2666,32 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2)
 {for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
     gdjs.PvCCode.GDBallObjects2[i].getBehavior("Physics2").applyForce(50, -(50), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointY("")));
 }
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects2[i].returnVariable(gdjs.PvCCode.GDBallObjects2[i].getVariables().get("BallHolder")).setString("NPC");
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.eventsList22 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.PvCCode.GDGreenBarObjects2, gdjs.PvCCode.GDGreenBarObjects4);
+
+{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDGreenBarObjects4[i].hide();
+}
 }}
 
 }
@@ -1469,16 +2699,1877 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2)
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, false, runtimeScene, false);
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.getPickedInstancesCount(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects) == 1;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11229852);
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects4[i].returnVariable(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")).setNumber(20);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].returnVariable(gdjs.PvCCode.GDBallObjects4[i].getVariables().get("BallHolder")).setString("NPC");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.getPickedInstancesCount(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects) == 1;
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+gdjs.copyArray(gdjs.PvCCode.GDGreenBarObjects2, gdjs.PvCCode.GDGreenBarObjects4);
+
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects4[i].returnVariable(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")).add(1);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDGreenBarObjects4[i].hide(false);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].returnVariable(gdjs.PvCCode.GDBallObjects4[i].getVariables().get("BallHolder")).setString("NPC");
+}
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.PvCCode.GDGreenBarObjects2, gdjs.PvCCode.GDGreenBarObjects3);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDGreenBarObjects3[i].getBehavior("Resizable").setHeight(5);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDGreenBarObjects3[i].getBehavior("Resizable").setWidth((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 1.5);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDGreenBarObjects3[i].setCenterPositionInScene((( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()),(( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()) - 50);
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects = Hashtable.newFrom({"DefaultThrowSpot": gdjs.PvCCode.GDDefaultThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects = Hashtable.newFrom({"DefaultThrowSpot": gdjs.PvCCode.GDDefaultThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.eventsList23 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")) >= 100 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects4[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")) >= 100 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")) >= 200 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("ChargeDistance")) >= 200 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects = Hashtable.newFrom({"DefaultThrowSpot": gdjs.PvCCode.GDDefaultThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects = Hashtable.newFrom({"DefaultThrowSpot": gdjs.PvCCode.GDDefaultThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.eventsList24 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{gdjs.PvCCode.GDNPCObjects4_1final.length = 0;
+let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) >= 60 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) == 100 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4_1final, gdjs.PvCCode.GDNPCObjects4);
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects4[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{gdjs.PvCCode.GDNPCObjects4_1final.length = 0;
+let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) >= 60 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) == 100 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4_1final, gdjs.PvCCode.GDNPCObjects4);
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")) >= 130 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("ChargeDistance")) >= 130 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDFarThrowSpotObjects4Objects = Hashtable.newFrom({"FarThrowSpot": gdjs.PvCCode.GDFarThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDFarThrowSpotObjects4Objects = Hashtable.newFrom({"FarThrowSpot": gdjs.PvCCode.GDFarThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.eventsList25 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("FarThrowSpot"), gdjs.PvCCode.GDFarThrowSpotObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDFarThrowSpotObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{gdjs.PvCCode.GDNPCObjects4_1final.length = 0;
+let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) >= 110 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) == 100 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4_1final, gdjs.PvCCode.GDNPCObjects4);
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))))), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("FarThrowSpot"), gdjs.PvCCode.GDFarThrowSpotObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects4[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDFarThrowSpotObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{gdjs.PvCCode.GDNPCObjects4_1final.length = 0;
+let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) >= 110 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) == 100 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4_1final, gdjs.PvCCode.GDNPCObjects4);
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance")))), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")) >= 200 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))))), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("ChargeDistance")) >= 200 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance")))), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2)), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDHighThrowSpotObjects4Objects = Hashtable.newFrom({"HighThrowSpot": gdjs.PvCCode.GDHighThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDHighThrowSpotObjects4Objects = Hashtable.newFrom({"HighThrowSpot": gdjs.PvCCode.GDHighThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.eventsList26 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("HighThrowSpot"), gdjs.PvCCode.GDHighThrowSpotObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDHighThrowSpotObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{gdjs.PvCCode.GDNPCObjects4_1final.length = 0;
+let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) >= 20 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) == 100 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4_1final, gdjs.PvCCode.GDNPCObjects4);
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))))), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("HighThrowSpot"), gdjs.PvCCode.GDHighThrowSpotObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects4[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDHighThrowSpotObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{gdjs.PvCCode.GDNPCObjects4_1final.length = 0;
+let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) >= 20 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4, gdjs.PvCCode.GDNPCObjects5);
+
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects5.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects5[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects5[i].getVariables().get("ChargeDistance")) == 100 ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDNPCObjects5[k] = gdjs.PvCCode.GDNPCObjects5[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects5.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects5.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDNPCObjects4_1final.indexOf(gdjs.PvCCode.GDNPCObjects5[j]) === -1 )
+            gdjs.PvCCode.GDNPCObjects4_1final.push(gdjs.PvCCode.GDNPCObjects5[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects4_1final, gdjs.PvCCode.GDNPCObjects4);
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))))), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")) >= 200 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects4);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyForce(-(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2)), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))))), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects4[0].getPointY("")));
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("ChargeDistance")) >= 200 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyForce(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2), -(((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))))), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects3[0].getPointY("")));
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects4Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
+gdjs.PvCCode.eventsList27 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects3, gdjs.PvCCode.GDBallObjects4);
+
+gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects4);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects4);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects4Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects4Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].isFlippedX() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getBehavior("PlatformerObject").isOnFloor() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("ChargeDistance")) >= 100 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDGoalObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDGoalObjects4[i].getCenterXInScene() <= (( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getCenterXInScene()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDGoalObjects4[k] = gdjs.PvCCode.GDGoalObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDGoalObjects4.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects4Objects, (( gdjs.PvCCode.GDBallObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects4[0].getCenterXInScene()), (( gdjs.PvCCode.GDBallObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects4[0].getCenterYInScene()), false);
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects4 */
+/* Reuse gdjs.PvCCode.GDGoalObjects4 */
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects4[i].getBehavior("Physics2").applyPolarForce(gdjs.evtTools.common.angleBetweenPositions((gdjs.PvCCode.GDBallObjects4[i].getCenterXInScene()), (gdjs.PvCCode.GDBallObjects4[i].getCenterYInScene()), (( gdjs.PvCCode.GDGoalObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects4[0].getCenterXInScene()), (( gdjs.PvCCode.GDGoalObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects4[0].getCenterYInScene())), ((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects4[0].getVariables()).get("ChargeDistance"))) / 2), 0, 0);
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+gdjs.copyArray(runtimeScene.getObjects("Goal"), gdjs.PvCCode.GDGoalObjects3);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDNPCObjects3[i].isFlippedX()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").isOnFloor() ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("ChargeDistance")) >= 100 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDGoalObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDGoalObjects3[i].getCenterXInScene() >= (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDGoalObjects3[k] = gdjs.PvCCode.GDGoalObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDGoalObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects, (( gdjs.PvCCode.GDBallObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDBallObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects3[0].getCenterYInScene()), false);
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDGoalObjects3 */
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").applyPolarForce(gdjs.evtTools.common.angleBetweenPositions((gdjs.PvCCode.GDBallObjects3[i].getCenterXInScene()), (gdjs.PvCCode.GDBallObjects3[i].getCenterYInScene()), (( gdjs.PvCCode.GDGoalObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDGoalObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDGoalObjects3[0].getCenterYInScene())), ((gdjs.RuntimeObject.getVariableNumber(((gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.PvCCode.GDNPCObjects3[0].getVariables()).get("ChargeDistance"))) / 2), 0, 0);
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.eventsList28 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("ChargeToggleGreen"), false);
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.PvCCode.GDGreenBarObjects2, gdjs.PvCCode.GDGreenBarObjects3);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDGreenBarObjects3[i].hide();
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].returnVariable(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("ChargeDistance")).setNumber(100);
+}
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("ChargeToggleGreen"), true);
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList22(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.getPickedInstancesCount(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects) == 1;
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDBallObjects3 */
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].setY(gdjs.PvCCode.GDBallObjects3[i].getY() - (32));
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].setPosition((( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")),(( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointY("")) - 20);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").setLinearVelocityY(0);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].getBehavior("Physics2").setLinearVelocityX(0);
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").simulateJumpKey();
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDBallObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDBallObjects3[i].returnVariable(gdjs.PvCCode.GDBallObjects3[i].getVariables().get("BallHolder")).setString("NPC");
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Solar")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Earth")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Skull")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Gold")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+}
+}
+}
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList23(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Skull") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList24(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Solar") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList25(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Earth") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList26(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Gold") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList27(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGroundObjects3Objects = Hashtable.newFrom({"Ground": gdjs.PvCCode.GDGroundObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDRedBoxObjects3Objects = Hashtable.newFrom({"RedBox": gdjs.PvCCode.GDRedBoxObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGreenBoxObjects3Objects = Hashtable.newFrom({"GreenBox": gdjs.PvCCode.GDGreenBoxObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGroundObjects3Objects = Hashtable.newFrom({"Ground": gdjs.PvCCode.GDGroundObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDRedBoxObjects3Objects = Hashtable.newFrom({"RedBox": gdjs.PvCCode.GDRedBoxObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGreenBoxObjects3Objects = Hashtable.newFrom({"GreenBox": gdjs.PvCCode.GDGreenBoxObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.eventsList29 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].returnVariable(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("HuntingState")).setNumber(1);
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, true, runtimeScene, false);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].returnVariable(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")).setNumber(1);
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.eventsList30 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].returnVariable(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("HuntingState")).setNumber(2);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(gdjs.PvCCode.GDBallObjects2, gdjs.PvCCode.GDBallObjects3);
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.distanceTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, 100, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects3Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects, true, runtimeScene, false);
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].returnVariable(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("HuntingState")).setNumber(1);
+}
+}}
+
+}
+
+
+{
+
+/* Reuse gdjs.PvCCode.GDBallObjects2 */
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, true, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.distanceTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, 100, true);
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].returnVariable(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")).setNumber(2);
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects = Hashtable.newFrom({"DefaultThrowSpot": gdjs.PvCCode.GDDefaultThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects3Objects = Hashtable.newFrom({"DefaultThrowSpot": gdjs.PvCCode.GDDefaultThrowSpotObjects3});
+gdjs.PvCCode.eventsList31 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects4);
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects4);
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects4Objects, (( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getPointX("")) > (( gdjs.PvCCode.GDDefaultThrowSpotObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDDefaultThrowSpotObjects4[0].getCenterXInScene()));
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("HuntingState")) == 3 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects4[i].getBehavior("PlatformerObject").simulateLeftKey();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects3);
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")) <= (( gdjs.PvCCode.GDDefaultThrowSpotObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDDefaultThrowSpotObjects3[0].getCenterXInScene()));
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("HuntingState")) == 3 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").simulateRightKey();
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDFarThrowSpotObjects4Objects = Hashtable.newFrom({"FarThrowSpot": gdjs.PvCCode.GDFarThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDFarThrowSpotObjects3Objects = Hashtable.newFrom({"FarThrowSpot": gdjs.PvCCode.GDFarThrowSpotObjects3});
+gdjs.PvCCode.eventsList32 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("FarThrowSpot"), gdjs.PvCCode.GDFarThrowSpotObjects4);
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects4);
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDFarThrowSpotObjects4Objects, (( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getPointX("")) > (( gdjs.PvCCode.GDFarThrowSpotObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDFarThrowSpotObjects4[0].getCenterXInScene()));
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("HuntingState")) == 3 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects4[i].getBehavior("PlatformerObject").simulateLeftKey();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("FarThrowSpot"), gdjs.PvCCode.GDFarThrowSpotObjects3);
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDFarThrowSpotObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")) <= (( gdjs.PvCCode.GDFarThrowSpotObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDFarThrowSpotObjects3[0].getCenterXInScene()));
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("HuntingState")) == 3 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").simulateRightKey();
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDHighThrowSpotObjects4Objects = Hashtable.newFrom({"HighThrowSpot": gdjs.PvCCode.GDHighThrowSpotObjects4});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDHighThrowSpotObjects3Objects = Hashtable.newFrom({"HighThrowSpot": gdjs.PvCCode.GDHighThrowSpotObjects3});
+gdjs.PvCCode.eventsList33 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("HighThrowSpot"), gdjs.PvCCode.GDHighThrowSpotObjects4);
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects4);
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDHighThrowSpotObjects4Objects, (( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects4[0].getPointX("")) > (( gdjs.PvCCode.GDHighThrowSpotObjects4.length === 0 ) ? 0 :gdjs.PvCCode.GDHighThrowSpotObjects4[0].getCenterXInScene()));
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects4.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects4[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects4[i].getVariables().get("HuntingState")) == 3 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects4[k] = gdjs.PvCCode.GDNPCObjects4[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects4.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects4 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects4.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects4[i].getBehavior("PlatformerObject").simulateLeftKey();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("HighThrowSpot"), gdjs.PvCCode.GDHighThrowSpotObjects3);
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDHighThrowSpotObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")) <= (( gdjs.PvCCode.GDHighThrowSpotObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDHighThrowSpotObjects3[0].getCenterXInScene()));
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("HuntingState")) == 3 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").simulateRightKey();
+}
+}}
+
+}
+
+
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects3Objects = Hashtable.newFrom({"DefaultThrowSpot": gdjs.PvCCode.GDDefaultThrowSpotObjects3});
+gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects2Objects = Hashtable.newFrom({"DefaultThrowSpot": gdjs.PvCCode.GDDefaultThrowSpotObjects2});
+gdjs.PvCCode.eventsList34 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects3);
+gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")) >= (( gdjs.PvCCode.GDDefaultThrowSpotObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDDefaultThrowSpotObjects3[0].getCenterXInScene()));
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects3[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects3[i].getVariables().get("HuntingState")) == 3 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects3[k] = gdjs.PvCCode.GDNPCObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects3 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects3.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects3[i].getBehavior("PlatformerObject").simulateLeftKey();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects2);
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDDefaultThrowSpotObjects2Objects, (( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getPointX("")) <= (( gdjs.PvCCode.GDDefaultThrowSpotObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDDefaultThrowSpotObjects2[0].getCenterXInScene()));
+}
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects2.length;i<l;++i) {
-    if ( gdjs.PvCCode.GDNPCObjects2[i].isFlippedX() ) {
+    if ( gdjs.PvCCode.GDNPCObjects2[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")) == 3 ) {
         isConditionTrue_0 = true;
         gdjs.PvCCode.GDNPCObjects2[k] = gdjs.PvCCode.GDNPCObjects2[i];
         ++k;
@@ -1486,13 +4577,178 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects2.length;i<l;++i) {
 }
 gdjs.PvCCode.GDNPCObjects2.length = k;
 }
+}
 if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDBallObjects2 */
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
-{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects2[i].getBehavior("Physics2").applyForce(-(50), -(50), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointX("")), (( gdjs.PvCCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDPlayerObjects2[0].getPointY("")));
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").simulateRightKey();
 }
 }}
+
+}
+
+
+};gdjs.PvCCode.eventsList35 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Solar")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Earth")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Gold")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+}
+}
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList31(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Solar") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList32(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects3);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects3[i].isCurrentAnimationName("Earth") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects3[k] = gdjs.PvCCode.GDBallObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects3.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList33(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Gold") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList34(runtimeScene);} //End of subevents
+}
+
+}
+
+
+};gdjs.PvCCode.eventsList36 = function(runtimeScene) {
+
+{
+
+
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("AutoToggleGreen"), true);
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.PvCCode.GDGreenBarObjects1, gdjs.PvCCode.GDGreenBarObjects2);
+
+{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDGreenBarObjects2[i].hide();
+}
+}
+{ //Subevents
+gdjs.PvCCode.eventsList21(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().get("AutoToggleGreen"), false);
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.PvCCode.GDGreenBarObjects1, gdjs.PvCCode.GDGreenBarObjects2);
+
+{for(var i = 0, len = gdjs.PvCCode.GDGreenBarObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDGreenBarObjects2[i].hide();
+}
+}
+{ //Subevents
+gdjs.PvCCode.eventsList28(runtimeScene);} //End of subevents
+}
 
 }
 
@@ -1536,7 +4792,7 @@ isConditionTrue_0 = false;
 gdjs.copyArray(runtimeScene.getObjects("Ground"), gdjs.PvCCode.GDGroundObjects3);
 gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
 
-isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGroundObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointY("")), 0, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
+isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGroundObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), 0, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
     for (let j = 0, jLen = gdjs.PvCCode.GDGroundObjects3.length; j < jLen ; ++j) {
@@ -1553,7 +4809,7 @@ if(isConditionTrue_1) {
 gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
 
 gdjs.copyArray(runtimeScene.getObjects("RedBox"), gdjs.PvCCode.GDRedBoxObjects3);
-isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDRedBoxObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointY("")), 0, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
+isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDRedBoxObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), 0, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
     for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects3.length; j < jLen ; ++j) {
@@ -1570,7 +4826,7 @@ if(isConditionTrue_1) {
 gdjs.copyArray(runtimeScene.getObjects("GreenBox"), gdjs.PvCCode.GDGreenBoxObjects3);
 gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
 
-isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGreenBoxObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointY("")), 0, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
+isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGreenBoxObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), 0, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
     for (let j = 0, jLen = gdjs.PvCCode.GDGreenBoxObjects3.length; j < jLen ; ++j) {
@@ -1633,7 +4889,7 @@ isConditionTrue_0 = false;
 gdjs.copyArray(runtimeScene.getObjects("Ground"), gdjs.PvCCode.GDGroundObjects3);
 gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
 
-isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGroundObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointY("")), 180, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
+isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGroundObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), 180, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
     for (let j = 0, jLen = gdjs.PvCCode.GDGroundObjects3.length; j < jLen ; ++j) {
@@ -1650,7 +4906,7 @@ if(isConditionTrue_1) {
 gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
 
 gdjs.copyArray(runtimeScene.getObjects("RedBox"), gdjs.PvCCode.GDRedBoxObjects3);
-isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDRedBoxObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointY("")), 180, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
+isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDRedBoxObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), 180, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
     for (let j = 0, jLen = gdjs.PvCCode.GDNPCObjects3.length; j < jLen ; ++j) {
@@ -1667,7 +4923,7 @@ if(isConditionTrue_1) {
 gdjs.copyArray(runtimeScene.getObjects("GreenBox"), gdjs.PvCCode.GDGreenBoxObjects3);
 gdjs.copyArray(gdjs.PvCCode.GDNPCObjects2, gdjs.PvCCode.GDNPCObjects3);
 
-isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGreenBoxObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointX("")), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getPointY("")), 180, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
+isConditionTrue_1 = gdjs.evtTools.object.raycastObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGreenBoxObjects3Objects, (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects3.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects3[0].getCenterYInScene()), 180, 100, runtimeScene.getScene().getVariables().get("GroundIntersectX"), runtimeScene.getScene().getVariables().get("GroundIntersectY"), false);
 if(isConditionTrue_1) {
     isConditionTrue_0 = true;
     for (let j = 0, jLen = gdjs.PvCCode.GDGreenBoxObjects3.length; j < jLen ; ++j) {
@@ -1700,6 +4956,88 @@ if (isConditionTrue_0) {
 
 {
 
+gdjs.PvCCode.GDGreenBoxObjects2.length = 0;
+
+gdjs.PvCCode.GDGroundObjects2.length = 0;
+
+gdjs.PvCCode.GDRedBoxObjects2.length = 0;
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{gdjs.PvCCode.GDGreenBoxObjects2_1final.length = 0;
+gdjs.PvCCode.GDGroundObjects2_1final.length = 0;
+gdjs.PvCCode.GDRedBoxObjects2_1final.length = 0;
+let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+gdjs.copyArray(runtimeScene.getObjects("Ground"), gdjs.PvCCode.GDGroundObjects3);
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDGroundObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDGroundObjects3[i].isCollidingWithPoint(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("GroundIntersectX")), gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("GroundIntersectY"))) ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDGroundObjects3[k] = gdjs.PvCCode.GDGroundObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDGroundObjects3.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDGroundObjects3.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDGroundObjects2_1final.indexOf(gdjs.PvCCode.GDGroundObjects3[j]) === -1 )
+            gdjs.PvCCode.GDGroundObjects2_1final.push(gdjs.PvCCode.GDGroundObjects3[j]);
+    }
+}
+}
+{
+gdjs.copyArray(runtimeScene.getObjects("RedBox"), gdjs.PvCCode.GDRedBoxObjects3);
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDRedBoxObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDRedBoxObjects3[i].isCollidingWithPoint(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("GroundIntersectX")), gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("GroundIntersectY"))) ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDRedBoxObjects3[k] = gdjs.PvCCode.GDRedBoxObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDRedBoxObjects3.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDRedBoxObjects3.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDRedBoxObjects2_1final.indexOf(gdjs.PvCCode.GDRedBoxObjects3[j]) === -1 )
+            gdjs.PvCCode.GDRedBoxObjects2_1final.push(gdjs.PvCCode.GDRedBoxObjects3[j]);
+    }
+}
+}
+{
+gdjs.copyArray(runtimeScene.getObjects("GreenBox"), gdjs.PvCCode.GDGreenBoxObjects3);
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDGreenBoxObjects3.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDGreenBoxObjects3[i].isCollidingWithPoint(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("GroundIntersectX")), gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("GroundIntersectY"))) ) {
+        isConditionTrue_1 = true;
+        gdjs.PvCCode.GDGreenBoxObjects3[k] = gdjs.PvCCode.GDGreenBoxObjects3[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDGreenBoxObjects3.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.PvCCode.GDGreenBoxObjects3.length; j < jLen ; ++j) {
+        if ( gdjs.PvCCode.GDGreenBoxObjects2_1final.indexOf(gdjs.PvCCode.GDGreenBoxObjects3[j]) === -1 )
+            gdjs.PvCCode.GDGreenBoxObjects2_1final.push(gdjs.PvCCode.GDGreenBoxObjects3[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.PvCCode.GDGreenBoxObjects2_1final, gdjs.PvCCode.GDGreenBoxObjects2);
+gdjs.copyArray(gdjs.PvCCode.GDGroundObjects2_1final, gdjs.PvCCode.GDGroundObjects2);
+gdjs.copyArray(gdjs.PvCCode.GDRedBoxObjects2_1final, gdjs.PvCCode.GDRedBoxObjects2);
+}
+}
+if (isConditionTrue_0) {
+}
+
+}
+
+
+{
+
 
 
 }
@@ -1725,14 +5063,67 @@ gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
 
 {
 
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( !(gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Invis")) ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
 if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList29(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Invis") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList30(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
 gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = (gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("PlayerScore")) >= gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("NpcScore")));
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects2[i].returnVariable(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")).setNumber(1);
+    gdjs.PvCCode.GDNPCObjects2[i].returnVariable(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")).setNumber(3);
 }
 }}
 
@@ -1742,22 +5133,20 @@ gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
 {
 
 gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
 gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, true, runtimeScene, false);
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtsExt__RepeatEveryXSeconds__Repeat.func(runtimeScene, "AI", 3, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, true, runtimeScene, false);
 }
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects2[i].returnVariable(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")).setNumber(gdjs.randomInRange(1, 2));
-}
-}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").simulateJumpKey();
+    gdjs.PvCCode.GDNPCObjects2[i].returnVariable(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")).setNumber(3);
 }
 }}
 
@@ -1770,6 +5159,9 @@ gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
 gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
 
 let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, (( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 {isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getPointX("")) > (( gdjs.PvCCode.GDBallObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects2[0].getPointX("")));
 }
@@ -1783,6 +5175,7 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects2.length;i<l;++i) {
     }
 }
 gdjs.PvCCode.GDNPCObjects2.length = k;
+}
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.PvCCode.GDNPCObjects2 */
@@ -1801,6 +5194,9 @@ gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.pickNearestObject(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, (( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getCenterXInScene()), (( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getCenterYInScene()), false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
 {isConditionTrue_0 = ((( gdjs.PvCCode.GDNPCObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDNPCObjects2[0].getPointX("")) < (( gdjs.PvCCode.GDBallObjects2.length === 0 ) ? 0 :gdjs.PvCCode.GDBallObjects2[0].getPointX("")));
 }
 if (isConditionTrue_0) {
@@ -1813,6 +5209,7 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects2.length;i<l;++i) {
     }
 }
 gdjs.PvCCode.GDNPCObjects2.length = k;
+}
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.PvCCode.GDNPCObjects2 */
@@ -1849,6 +5246,9 @@ if (isConditionTrue_0) {
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
     gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").simulateLeftKey();
 }
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").simulateJumpKey();
+}
 }}
 
 }
@@ -1879,7 +5279,105 @@ if (isConditionTrue_0) {
 {for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
     gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").simulateRightKey();
 }
+}{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").simulateJumpKey();
+}
 }}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Skull") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects2[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")) == 1 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects2[k] = gdjs.PvCCode.GDNPCObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects2.length = k;
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").simulateJumpKey();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDBallObjects2[i].isCurrentAnimationName("Gold") ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDBallObjects2[k] = gdjs.PvCCode.GDBallObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDBallObjects2.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects2[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")) == 1 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects2[k] = gdjs.PvCCode.GDNPCObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects2.length = k;
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.PvCCode.GDNPCObjects2 */
+{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").simulateJumpKey();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PvCCode.GDNPCObjects2.length;i<l;++i) {
+    if ( gdjs.PvCCode.GDNPCObjects2[i].getVariableNumber(gdjs.PvCCode.GDNPCObjects2[i].getVariables().get("HuntingState")) == 3 ) {
+        isConditionTrue_0 = true;
+        gdjs.PvCCode.GDNPCObjects2[k] = gdjs.PvCCode.GDNPCObjects2[i];
+        ++k;
+    }
+}
+gdjs.PvCCode.GDNPCObjects2.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PvCCode.eventsList35(runtimeScene);} //End of subevents
+}
 
 }
 
@@ -1932,38 +5430,24 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.PvCCode.eventsList13 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList37 = function(runtimeScene) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
 
 let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDNPCObjects2 */
-{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").setGravity(1500);
-}
-}}
-
-}
-
-
 {
-
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, true, runtimeScene, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDNPCObjects2 */
-{for(var i = 0, len = gdjs.PvCCode.GDNPCObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDNPCObjects2[i].getBehavior("PlatformerObject").setGravity(1000);
+gdjs.copyArray(runtimeScene.getObjects("DefaultThrowSpot"), gdjs.PvCCode.GDDefaultThrowSpotObjects2);
+gdjs.copyArray(runtimeScene.getObjects("FarThrowSpot"), gdjs.PvCCode.GDFarThrowSpotObjects2);
+gdjs.copyArray(runtimeScene.getObjects("HighThrowSpot"), gdjs.PvCCode.GDHighThrowSpotObjects2);
+{for(var i = 0, len = gdjs.PvCCode.GDDefaultThrowSpotObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDDefaultThrowSpotObjects2[i].hide();
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDHighThrowSpotObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDHighThrowSpotObjects2[i].hide();
+}
+}{for(var i = 0, len = gdjs.PvCCode.GDFarThrowSpotObjects2.length ;i < len;++i) {
+    gdjs.PvCCode.GDFarThrowSpotObjects2[i].hide();
 }
 }}
 
@@ -1979,7 +5463,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGam
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList11(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList20(runtimeScene);} //End of subevents
 }
 
 }
@@ -1998,22 +5482,18 @@ gdjs.copyArray(runtimeScene.getObjects("GreenBar"), gdjs.PvCCode.GDGreenBarObjec
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList12(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList36(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects = Hashtable.newFrom({"Player": gdjs.PvCCode.GDPlayerObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects = Hashtable.newFrom({"NPC": gdjs.PvCCode.GDNPCObjects2});
-gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
+};gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback22231268 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback11297140 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
-gdjs.PvCCode.eventsList14 = function(runtimeScene) {
+gdjs.PvCCode.eventsList38 = function(runtimeScene) {
 
 {
 
@@ -2021,7 +5501,7 @@ gdjs.PvCCode.eventsList14 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback22231268(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback11297140(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -2030,10 +5510,10 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1)
 
 };gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback22232676 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback11298556 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
-gdjs.PvCCode.eventsList15 = function(runtimeScene) {
+gdjs.PvCCode.eventsList39 = function(runtimeScene) {
 
 {
 
@@ -2041,17 +5521,17 @@ gdjs.PvCCode.eventsList15 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback22232676(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback11298556(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback22235316 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback11300284 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }}
-gdjs.PvCCode.eventsList16 = function(runtimeScene) {
+gdjs.PvCCode.eventsList40 = function(runtimeScene) {
 
 {
 
@@ -2059,17 +5539,17 @@ gdjs.PvCCode.eventsList16 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback22235316(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11300284(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback22236932 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback11301876 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }}
-gdjs.PvCCode.eventsList17 = function(runtimeScene) {
+gdjs.PvCCode.eventsList41 = function(runtimeScene) {
 
 {
 
@@ -2077,14 +5557,14 @@ gdjs.PvCCode.eventsList17 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback22236932(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11301876(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.eventsList18 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList42 = function(runtimeScene) {
 
 {
 
@@ -2106,7 +5586,7 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22230412);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11296812);
 }
 }
 }
@@ -2115,7 +5595,7 @@ if (isConditionTrue_0) {
 }{runtimeScene.getScene().getVariables().get("PlayerScore").add(1);
 }
 { //Subevents
-gdjs.PvCCode.eventsList14(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList38(runtimeScene);} //End of subevents
 }
 
 }
@@ -2141,7 +5621,7 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22232076);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11297564);
 }
 }
 }
@@ -2150,7 +5630,7 @@ if (isConditionTrue_0) {
 }{runtimeScene.getScene().getVariables().get("NpcScore").add(1);
 }
 { //Subevents
-gdjs.PvCCode.eventsList15(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList39(runtimeScene);} //End of subevents
 }
 
 }
@@ -2180,7 +5660,7 @@ gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList16(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList40(runtimeScene);} //End of subevents
 }
 
 }
@@ -2210,7 +5690,7 @@ gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList17(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList41(runtimeScene);} //End of subevents
 }
 
 }
@@ -2237,10 +5717,10 @@ if (isConditionTrue_0) {
 
 };gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback22243332 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback11306116 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
-gdjs.PvCCode.eventsList19 = function(runtimeScene) {
+gdjs.PvCCode.eventsList43 = function(runtimeScene) {
 
 {
 
@@ -2248,7 +5728,7 @@ gdjs.PvCCode.eventsList19 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback22243332(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback11306116(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -2257,10 +5737,10 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1)
 
 };gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback22245412 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback11307756 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
-gdjs.PvCCode.eventsList20 = function(runtimeScene) {
+gdjs.PvCCode.eventsList44 = function(runtimeScene) {
 
 {
 
@@ -2268,17 +5748,17 @@ gdjs.PvCCode.eventsList20 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback22245412(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback11307756(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback22247044 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback11309396 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }}
-gdjs.PvCCode.eventsList21 = function(runtimeScene) {
+gdjs.PvCCode.eventsList45 = function(runtimeScene) {
 
 {
 
@@ -2286,17 +5766,17 @@ gdjs.PvCCode.eventsList21 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback22247044(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11309396(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback22249452 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback11310844 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }}
-gdjs.PvCCode.eventsList22 = function(runtimeScene) {
+gdjs.PvCCode.eventsList46 = function(runtimeScene) {
 
 {
 
@@ -2304,14 +5784,14 @@ gdjs.PvCCode.eventsList22 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback22249452(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11310844(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.eventsList23 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList47 = function(runtimeScene) {
 
 {
 
@@ -2347,7 +5827,7 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22242252);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11305580);
 }
 }
 }
@@ -2357,7 +5837,7 @@ if (isConditionTrue_0) {
 }{runtimeScene.getScene().getVariables().get("NpcScore").sub(1);
 }
 { //Subevents
-gdjs.PvCCode.eventsList19(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList43(runtimeScene);} //End of subevents
 }
 
 }
@@ -2383,7 +5863,7 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22244268);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11307252);
 }
 }
 }
@@ -2393,7 +5873,7 @@ if (isConditionTrue_0) {
 }{runtimeScene.getScene().getVariables().get("PlayerScore").sub(1);
 }
 { //Subevents
-gdjs.PvCCode.eventsList20(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList44(runtimeScene);} //End of subevents
 }
 
 }
@@ -2423,7 +5903,7 @@ gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList21(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList45(runtimeScene);} //End of subevents
 }
 
 }
@@ -2453,7 +5933,7 @@ gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList22(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList46(runtimeScene);} //End of subevents
 }
 
 }
@@ -2461,10 +5941,10 @@ gdjs.PvCCode.eventsList22(runtimeScene);} //End of subevents
 
 };gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback22252020 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback11313172 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
-gdjs.PvCCode.eventsList24 = function(runtimeScene) {
+gdjs.PvCCode.eventsList48 = function(runtimeScene) {
 
 {
 
@@ -2472,7 +5952,7 @@ gdjs.PvCCode.eventsList24 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback22252020(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback11313172(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -2481,10 +5961,10 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1)
 
 };gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects3Objects = Hashtable.newFrom({"Ball": gdjs.PvCCode.GDBallObjects3});
 gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDGoalObjects3Objects = Hashtable.newFrom({"Goal": gdjs.PvCCode.GDGoalObjects3});
-gdjs.PvCCode.asyncCallback22254076 = function (runtimeScene, asyncObjectsList) {
+gdjs.PvCCode.asyncCallback11314812 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.setTimeScale(runtimeScene, 1);
 }}
-gdjs.PvCCode.eventsList25 = function(runtimeScene) {
+gdjs.PvCCode.eventsList49 = function(runtimeScene) {
 
 {
 
@@ -2492,17 +5972,17 @@ gdjs.PvCCode.eventsList25 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback22254076(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.PvCCode.asyncCallback11314812(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback22255916 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback11316508 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }}
-gdjs.PvCCode.eventsList26 = function(runtimeScene) {
+gdjs.PvCCode.eventsList50 = function(runtimeScene) {
 
 {
 
@@ -2510,17 +5990,17 @@ gdjs.PvCCode.eventsList26 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback22255916(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11316508(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback22257540 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback11318052 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }}
-gdjs.PvCCode.eventsList27 = function(runtimeScene) {
+gdjs.PvCCode.eventsList51 = function(runtimeScene) {
 
 {
 
@@ -2528,14 +6008,14 @@ gdjs.PvCCode.eventsList27 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback22257540(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11318052(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.eventsList28 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList52 = function(runtimeScene) {
 
 {
 
@@ -2557,7 +6037,7 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22250940);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11312620);
 }
 }
 }
@@ -2567,7 +6047,7 @@ if (isConditionTrue_0) {
 }{runtimeScene.getScene().getVariables().get("NpcScore").setNumber(0);
 }
 { //Subevents
-gdjs.PvCCode.eventsList24(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList48(runtimeScene);} //End of subevents
 }
 
 }
@@ -2593,7 +6073,7 @@ for (var i = 0, k = 0, l = gdjs.PvCCode.GDBallObjects3.length;i<l;++i) {
 gdjs.PvCCode.GDBallObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(22252932);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11314268);
 }
 }
 }
@@ -2603,7 +6083,7 @@ if (isConditionTrue_0) {
 }{runtimeScene.getScene().getVariables().get("PlayerScore").setNumber(0);
 }
 { //Subevents
-gdjs.PvCCode.eventsList25(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList49(runtimeScene);} //End of subevents
 }
 
 }
@@ -2633,7 +6113,7 @@ gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList26(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList50(runtimeScene);} //End of subevents
 }
 
 }
@@ -2663,16 +6143,16 @@ gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList27(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList51(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback22263164 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback11322588 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }}
-gdjs.PvCCode.eventsList29 = function(runtimeScene) {
+gdjs.PvCCode.eventsList53 = function(runtimeScene) {
 
 {
 
@@ -2680,17 +6160,17 @@ gdjs.PvCCode.eventsList29 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback22263164(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11322588(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.asyncCallback22266508 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PvCCode.asyncCallback11324508 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }}
-gdjs.PvCCode.eventsList30 = function(runtimeScene) {
+gdjs.PvCCode.eventsList54 = function(runtimeScene) {
 
 {
 
@@ -2698,14 +6178,14 @@ gdjs.PvCCode.eventsList30 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback22266508(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PvCCode.asyncCallback11324508(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PvCCode.eventsList31 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList55 = function(runtimeScene) {
 
 {
 
@@ -2717,42 +6197,6 @@ if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects2);
 {for(var i = 0, len = gdjs.PvCCode.GDTeamWonObjects2.length ;i < len;++i) {
     gdjs.PvCCode.GDTeamWonObjects2[i].hide();
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.PvCCode.GDPlayerObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDPlayerObjects2Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDBallObjects2 */
-{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects2[i].returnVariable(gdjs.PvCCode.GDBallObjects2[i].getVariables().get("BallHolder")).setString("Player");
-}
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("Ball"), gdjs.PvCCode.GDBallObjects2);
-gdjs.copyArray(runtimeScene.getObjects("NPC"), gdjs.PvCCode.GDNPCObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDBallObjects2Objects, gdjs.PvCCode.mapOfGDgdjs_9546PvCCode_9546GDNPCObjects2Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.PvCCode.GDBallObjects2 */
-{for(var i = 0, len = gdjs.PvCCode.GDBallObjects2.length ;i < len;++i) {
-    gdjs.PvCCode.GDBallObjects2[i].returnVariable(gdjs.PvCCode.GDBallObjects2[i].getVariables().get("BallHolder")).setString("NPC");
 }
 }}
 
@@ -2811,7 +6255,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGam
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList18(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList42(runtimeScene);} //End of subevents
 }
 
 }
@@ -2833,7 +6277,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGam
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList23(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList47(runtimeScene);} //End of subevents
 }
 
 }
@@ -2855,7 +6299,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGam
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.PvCCode.eventsList28(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList52(runtimeScene);} //End of subevents
 }
 
 }
@@ -2948,7 +6392,7 @@ gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList29(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList53(runtimeScene);} //End of subevents
 }
 
 }
@@ -2983,13 +6427,13 @@ gdjs.copyArray(runtimeScene.getObjects("TeamWon"), gdjs.PvCCode.GDTeamWonObjects
 }
 }
 { //Subevents
-gdjs.PvCCode.eventsList30(runtimeScene);} //End of subevents
+gdjs.PvCCode.eventsList54(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.PvCCode.eventsList32 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList56 = function(runtimeScene) {
 
 {
 
@@ -3132,7 +6576,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.PvCCode.eventsList33 = function(runtimeScene) {
+};gdjs.PvCCode.eventsList57 = function(runtimeScene) {
 
 {
 
@@ -3151,28 +6595,35 @@ gdjs.PvCCode.eventsList2(runtimeScene);
 {
 
 
-gdjs.PvCCode.eventsList7(runtimeScene);
+gdjs.PvCCode.eventsList3(runtimeScene);
 }
 
 
 {
 
 
-gdjs.PvCCode.eventsList13(runtimeScene);
+gdjs.PvCCode.eventsList12(runtimeScene);
 }
 
 
 {
 
 
-gdjs.PvCCode.eventsList31(runtimeScene);
+gdjs.PvCCode.eventsList37(runtimeScene);
 }
 
 
 {
 
 
-gdjs.PvCCode.eventsList32(runtimeScene);
+gdjs.PvCCode.eventsList55(runtimeScene);
+}
+
+
+{
+
+
+gdjs.PvCCode.eventsList56(runtimeScene);
 }
 
 
@@ -3283,8 +6734,26 @@ gdjs.PvCCode.GDGreenBarObjects3.length = 0;
 gdjs.PvCCode.GDGreenBarObjects4.length = 0;
 gdjs.PvCCode.GDGreenBarObjects5.length = 0;
 gdjs.PvCCode.GDGreenBarObjects6.length = 0;
+gdjs.PvCCode.GDDefaultThrowSpotObjects1.length = 0;
+gdjs.PvCCode.GDDefaultThrowSpotObjects2.length = 0;
+gdjs.PvCCode.GDDefaultThrowSpotObjects3.length = 0;
+gdjs.PvCCode.GDDefaultThrowSpotObjects4.length = 0;
+gdjs.PvCCode.GDDefaultThrowSpotObjects5.length = 0;
+gdjs.PvCCode.GDDefaultThrowSpotObjects6.length = 0;
+gdjs.PvCCode.GDHighThrowSpotObjects1.length = 0;
+gdjs.PvCCode.GDHighThrowSpotObjects2.length = 0;
+gdjs.PvCCode.GDHighThrowSpotObjects3.length = 0;
+gdjs.PvCCode.GDHighThrowSpotObjects4.length = 0;
+gdjs.PvCCode.GDHighThrowSpotObjects5.length = 0;
+gdjs.PvCCode.GDHighThrowSpotObjects6.length = 0;
+gdjs.PvCCode.GDFarThrowSpotObjects1.length = 0;
+gdjs.PvCCode.GDFarThrowSpotObjects2.length = 0;
+gdjs.PvCCode.GDFarThrowSpotObjects3.length = 0;
+gdjs.PvCCode.GDFarThrowSpotObjects4.length = 0;
+gdjs.PvCCode.GDFarThrowSpotObjects5.length = 0;
+gdjs.PvCCode.GDFarThrowSpotObjects6.length = 0;
 
-gdjs.PvCCode.eventsList33(runtimeScene);
+gdjs.PvCCode.eventsList57(runtimeScene);
 
 return;
 
